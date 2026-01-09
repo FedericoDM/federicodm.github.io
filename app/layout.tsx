@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { MobileMenu } from '@/components/MobileMenu';
 
 
 export const metadata: Metadata = {
@@ -21,13 +22,14 @@ return (
     <body className="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
     <header className="sticky top-0 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-zinc-950/70 border-b border-zinc-200 dark:border-zinc-800 z-50">
     <nav className="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
-    <Link href="/" className="font-semibold">Fede</Link>
-    <div className="flex items-center gap-4 text-sm">
-    <Link href="/projects">Projects</Link>
-    <Link href="/writing">Writing</Link>
-    <Link href="/about">About</Link>
-    <a href="mailto:you@example.com" className="px-3 py-1 rounded-xl bg-accent text-white">Contact</a>
+    <Link href="/" className="font-semibold text-lg">Fede</Link>
+    <div className="hidden sm:flex items-center gap-4 text-sm">
+    <Link href="/projects" className="hover:text-accent transition-colors">Projects</Link>
+    <Link href="/writing" className="hover:text-accent transition-colors">Writing</Link>
+    <Link href="/about" className="hover:text-accent transition-colors">About</Link>
+    <a href="mailto:you@example.com" className="px-3 py-1 rounded-xl bg-accent text-white hover:bg-accent-dark transition-colors">Contact</a>
     </div>
+    <MobileMenu />
     </nav>
     </header>
     <main className="mx-auto max-w-4xl px-4 py-10">{children}</main>
