@@ -12,13 +12,18 @@ theme: {
 extend: {
 colors: {
 accent: {
-DEFAULT: '#6366f1', // indigo-500
-light: '#818cf8',   // indigo-400
-dark: '#4f46e5'     // indigo-600
+DEFAULT: '#a1a1aa', // zinc-400 - subtle gray for links
+light: '#d4d4d8',   // zinc-300
+dark: '#71717a'     // zinc-500
+},
+bg: {
+DEFAULT: '#0a0a0a', // almost black
+light: '#171717'    // zinc-900
 }
 },
 fontFamily: {
-sans: ['Inter', 'system-ui', 'sans-serif']
+sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+mono: ['SF Mono', 'Consolas', 'Monaco', 'monospace']
 }
 }
 },
