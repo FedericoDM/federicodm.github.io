@@ -1,20 +1,9 @@
-import createMDX from '@next/mdx';
-
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-experimental: {
-mdxRs: true
-}
+  // Uncomment for GitHub Pages deployment:
+  // output: 'export',
+  // basePath: '/personal-portfolio',
+  // images: { unoptimized: true },
 };
 
-
-const withMDX = createMDX({
-extension: /\.mdx?$/
-});
-
-
-export default withMDX({
-...nextConfig,
-pageExtensions: ['ts', 'tsx', 'mdx']
-});
+export default nextConfig;
