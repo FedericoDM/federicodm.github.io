@@ -220,7 +220,7 @@ className="text-zinc-400 hover:text-zinc-100 transition-colors"
 LinkedIn
 </a>
 <a
-href="/resume.pdf"
+href="/Resume_FedericoDominguezMolina.pdf"
 target="_blank"
 rel="noopener noreferrer"
 className="text-secondary hover:text-secondary-light transition-colors font-medium"
