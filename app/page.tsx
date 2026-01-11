@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { projects } from '@/content/projects-data';
 import { ProjectCard } from '@/components/ProjectCard';
+import { SkillIcon } from '@/components/SkillIcon';
 
 
 export default function HomePage() {
@@ -108,38 +109,14 @@ to public health compliance and business intelligence.
 
 {/* Skills Section */}
 <section id="skills" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Skills & Technologies</h2>
-<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-3xl">
-<div className="space-y-4">
-<h3 className="font-normal text-zinc-100">Python Ecosystem</h3>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>pandas, numpy, scipy</li>
-<li>scikit-learn, pytorch</li>
-<li>transformers, xgboost</li>
-<li>fastapi, flask</li>
-<li>plotly, streamlit</li>
-</ul>
-</div>
-
-<div className="space-y-4">
-<h3 className="font-normal text-zinc-100">Data & Cloud</h3>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>SQL, PostgreSQL</li>
-<li>AWS (Lambda, EC2, S3)</li>
-<li>PySpark, Databricks</li>
-<li>R, Power BI</li>
-</ul>
-</div>
-
-<div className="space-y-4">
-<h3 className="font-normal text-zinc-100">Other</h3>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>Git, Docker</li>
-<li>C, SAS, MATLAB</li>
-<li>Web scraping (Selenium)</li>
-<li>NLP, ML pipelines</li>
-</ul>
-</div>
+<h2 className="text-2xl font-normal text-zinc-100">Skills & Expertise</h2>
+<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<SkillIcon name="Python" icon="python" />
+<SkillIcon name="Machine Learning" icon="ml" />
+<SkillIcon name="Data Analysis" icon="data" />
+<SkillIcon name="Cloud (AWS)" icon="cloud" />
+<SkillIcon name="Databases" icon="database" />
+<SkillIcon name="Web APIs" icon="web" />
 </div>
 </section>
 
