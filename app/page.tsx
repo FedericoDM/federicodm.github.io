@@ -39,8 +39,12 @@ to public health compliance and business intelligence.
 {/* Experience Section */}
 <section id="experience" className="space-y-8">
 <h2 className="text-2xl font-normal text-zinc-100">Experience</h2>
-<div className="space-y-10 max-w-2xl">
-<div className="space-y-3">
+<div className="relative space-y-8 max-w-2xl">
+{/* Timeline line */}
+<div className="absolute left-0 top-2 bottom-2 w-px bg-zinc-800 hidden sm:block" />
+
+<div className="relative space-y-3 sm:pl-8">
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Scientist</h3>
@@ -54,7 +58,8 @@ to public health compliance and business intelligence.
 </ul>
 </div>
 
-<div className="space-y-3">
+<div className="relative space-y-3 sm:pl-8">
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-700 hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Senior Data Scientist</h3>
@@ -69,7 +74,8 @@ to public health compliance and business intelligence.
 </ul>
 </div>
 
-<div className="space-y-3">
+<div className="relative space-y-3 sm:pl-8">
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-700 hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Science Research Assistant</h3>
@@ -83,7 +89,8 @@ to public health compliance and business intelligence.
 </ul>
 </div>
 
-<div className="space-y-3">
+<div className="relative space-y-3 sm:pl-8">
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-700 hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Engineering Fellow</h3>
@@ -141,9 +148,43 @@ to public health compliance and business intelligence.
 <section id="publications" className="space-y-8">
 <h2 className="text-2xl font-normal text-zinc-100">Publications</h2>
 <div className="max-w-2xl">
-<p className="text-zinc-400">
-<span className="font-normal text-zinc-100">Academic Copaganda</span> (with Dr. Robert Vargas)
+<a
+href="https://www.cambridge.org/core/journals/law-and-society-review/article/academic-copaganda/1D096FAF1C38403739FCBB8D482FE24A"
+target="_blank"
+rel="noopener noreferrer"
+className="group block"
+>
+<p className="text-zinc-400 group-hover:text-zinc-100 transition-colors">
+<span className="font-normal text-zinc-100 group-hover:text-secondary">Academic Copaganda</span> (with Dr. Robert Vargas) • <span className="text-secondary">Law and Society Review →</span>
 </p>
+</a>
+</div>
+</section>
+
+{/* Featured Section */}
+<section id="featured" className="space-y-8">
+<h2 className="text-2xl font-normal text-zinc-100">Featured</h2>
+<div className="max-w-2xl space-y-4">
+<a
+href="https://blog.codingitforward.com/meet-the-2023-fellows-federico-dominguez-molina-a1bf4f5df171"
+target="_blank"
+rel="noopener noreferrer"
+className="block group"
+>
+<p className="text-zinc-400 group-hover:text-zinc-100 transition-colors">
+<span className="text-zinc-100">Featured Fellow</span> • Coding it Forward 2023 <span className="text-secondary">→</span>
+</p>
+</a>
+<a
+href="https://harris.uchicago.edu/news-events/news/student-profile-federico-dominguez-mscapp-class-2024"
+target="_blank"
+rel="noopener noreferrer"
+className="block group"
+>
+<p className="text-zinc-400 group-hover:text-zinc-100 transition-colors">
+<span className="text-zinc-100">Student Profile</span> • The Harris School of Public Policy <span className="text-secondary">→</span>
+</p>
+</a>
 </div>
 </section>
 
@@ -177,6 +218,14 @@ rel="noopener noreferrer"
 className="text-zinc-400 hover:text-zinc-100 transition-colors"
 >
 LinkedIn
+</a>
+<a
+href="/resume.pdf"
+target="_blank"
+rel="noopener noreferrer"
+className="text-secondary hover:text-secondary-light transition-colors font-medium"
+>
+Download Resume
 </a>
 </div>
 </div>
