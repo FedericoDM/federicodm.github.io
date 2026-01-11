@@ -14,6 +14,7 @@ export const projects: Project[] = [
     title: 'Global Air Pollution Alert System',
     description: 'Pioneered a global alert system targeting air pollution advocates from 30+ cities using X (Twitter), natural language processing, graph analysis, and real-time pollution data.',
     tags: ['Python', 'NLP', 'Graph Analysis', 'Real-time Data'],
+    link: 'https://climate.uchicago.edu/entities/empowering-environmental-governance-with-satellite-data-a-global-randomized-control-trial/',
     github: 'https://github.com/FedericoDM',
     image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=450&fit=crop',
   },
