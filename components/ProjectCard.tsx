@@ -2,16 +2,11 @@ import Link from 'next/link';
 import type { Project } from '@/content/projects-data';
 
 export function ProjectCard({ project }: { project: Project }) {
-  const href = project.link || project.github || '#';
-  const isExternal = project.link || project.github;
+  const href = project.link || project.github;
+  const isExternal = !!href;
 
-  return (
-    <Link
-      href={href}
-      target={isExternal ? '_blank' : undefined}
-      rel={isExternal ? 'noopener noreferrer' : undefined}
-      className="group block"
-    >
+  const content = (
+    <>
       {/* Project Image */}
       <div className="relative w-full aspect-video mb-4 bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800">
         {project.image ? (
@@ -45,19 +40,21 @@ export function ProjectCard({ project }: { project: Project }) {
           <h3 className="text-base font-normal text-zinc-100 group-hover:text-secondary transition-colors">
             {project.title}
           </h3>
-          <svg
-            className="w-4 h-4 text-zinc-600 group-hover:text-secondary flex-shrink-0 transition-colors"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
+          {isExternal && (
+            <svg
+              className="w-4 h-4 text-zinc-600 group-hover:text-secondary flex-shrink-0 transition-colors"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          )}
         </div>
 
         <p className="text-sm text-zinc-500 leading-relaxed">
@@ -75,6 +72,21 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
       </div>
-    </Link>
+    </>
   );
+
+  if (isExternal) {
+    return (
+      <Link
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block"
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return <div className="group">{content}</div>;
 }

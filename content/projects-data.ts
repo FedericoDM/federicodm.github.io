@@ -15,7 +15,6 @@ export const projects: Project[] = [
     description: 'Pioneered a global alert system targeting air pollution advocates from 30+ cities using X (Twitter), natural language processing, graph analysis, and real-time pollution data.',
     tags: ['Python', 'NLP', 'Graph Analysis', 'Real-time Data'],
     link: 'https://climate.uchicago.edu/entities/empowering-environmental-governance-with-satellite-data-a-global-randomized-control-trial/',
-    github: 'https://github.com/FedericoDM',
     image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=450&fit=crop',
   },
   {
@@ -45,7 +44,7 @@ export const projects: Project[] = [
     title: 'Social Media Analytics Alert System',
     description: 'Led automatic alert system project to help 20+ clients improve customer relationships via social media analytics and real-time monitoring.',
     tags: ['Python', 'NLP', 'Social Media', 'AWS'],
-    image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800&h=450&fit=crop',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop',
   },
   {
     slug: 'climate-data-platform',
