@@ -108,6 +108,22 @@ to public health compliance and business intelligence.
 <div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
+<h3 className="font-normal text-zinc-100">Junior Data Scientist</h3>
+<p className="text-sm text-zinc-500">deep_dive</p>
+</div>
+<span className="text-sm text-zinc-600">June 2020 - Oct 2021</span>
+</div>
+<ul className="space-y-2 text-sm text-zinc-500">
+<li>• Extracted and parsed data from key Mexican governmental sources for strategic analysis</li>
+<li>• Implemented dynamic Power BI dashboard to monitor government projects and infrastructure</li>
+<li>• Devised supervised ML models achieving top inflation forecaster status in Mexico</li>
+</ul>
+</div>
+
+<div className="relative space-y-3 sm:pl-8">
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+<div>
 <h3 className="font-normal text-zinc-100">Data Science Research Assistant</h3>
 <p className="text-sm text-zinc-500">University of Chicago</p>
 </div>
