@@ -92,6 +92,36 @@ to public health compliance and business intelligence.
 <div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
+<h3 className="font-normal text-zinc-100">Data Science Research Assistant</h3>
+<p className="text-sm text-zinc-500">University of Chicago</p>
+</div>
+<span className="text-sm text-zinc-600">Feb 2023 - June 2024</span>
+</div>
+<ul className="space-y-2 text-sm text-zinc-500">
+<li>• Co-developed FastAPI web platform for laboratory games informing children's decision-making research</li>
+<li>• Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</li>
+</ul>
+</div>
+
+<div className="relative space-y-3 sm:pl-8">
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+<div>
+<h3 className="font-normal text-zinc-100">Data Engineering Fellow</h3>
+<p className="text-sm text-zinc-500">Coding it Forward</p>
+</div>
+<span className="text-sm text-zinc-600">June 2023 - Aug 2023</span>
+</div>
+<ul className="space-y-2 text-sm text-zinc-500">
+<li>• Automated data collection & cleaning for six websites, reducing 10+ weekly hours of manual work</li>
+<li>• Built Python data platform for Long Beach Climate Office accessing 2010-2023 data</li>
+</ul>
+</div>
+
+<div className="relative space-y-3 sm:pl-8">
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+<div>
 <h3 className="font-normal text-zinc-100">Senior Data Scientist</h3>
 <p className="text-sm text-zinc-500">deep_dive</p>
 </div>
@@ -117,36 +147,6 @@ to public health compliance and business intelligence.
 <li>• Extracted and parsed data from key Mexican governmental sources for strategic analysis</li>
 <li>• Implemented dynamic Power BI dashboard to monitor government projects and infrastructure</li>
 <li>• Devised supervised ML models achieving top inflation forecaster status in Mexico</li>
-</ul>
-</div>
-
-<div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
-<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-<div>
-<h3 className="font-normal text-zinc-100">Data Science Research Assistant</h3>
-<p className="text-sm text-zinc-500">University of Chicago</p>
-</div>
-<span className="text-sm text-zinc-600">Feb 2023 - June 2024</span>
-</div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>• Co-developed FastAPI web platform for laboratory games informing children's decision-making research</li>
-<li>• Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</li>
-</ul>
-</div>
-
-<div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
-<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-<div>
-<h3 className="font-normal text-zinc-100">Data Engineering Fellow</h3>
-<p className="text-sm text-zinc-500">Coding it Forward</p>
-</div>
-<span className="text-sm text-zinc-600">June 2023 - Aug 2023</span>
-</div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>• Automated data collection & cleaning for six websites, reducing 10+ weekly hours of manual work</li>
-<li>• Built Python data platform for Long Beach Climate Office accessing 2010-2023 data</li>
 </ul>
 </div>
 </div>
