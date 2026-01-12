@@ -55,4 +55,12 @@ export const projects: Project[] = [
     github: 'https://github.com/City-of-Long-Beach-Public/climate_inventory',
     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=450&fit=crop',
   },
+  {
+    slug: 'policing-bias-visualizations',
+    title: 'Policing Research Bias Detection',
+    description: 'Created 10+ interactive visualizations and dashboards with Plotly to detect bias in 250+ policing research papers for academic research.',
+    tags: ['Python', 'Plotly', 'Data Visualization', 'Research'],
+    link: 'https://www.cambridge.org/core/journals/law-and-society-review/article/academic-copaganda/1D096FAF1C38403739FCBB8D482FE24A',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop',
+  },
 ];
