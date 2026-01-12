@@ -58,7 +58,7 @@ Data Scientist building systems that transform data into actionable insights for
 Currently working on environmental advocacy and public health at the Energy & Environment Lab.
 </p>
 <p className="text-zinc-400 leading-relaxed">
-I hold an M.S. in Computational Analysis and Public Policy from the University of Chicago
+I hold an M.S. in Computational Analysis and Public Policy (MSCAPP) from the University of Chicago
 and a B.A. in Economics (Honors) from ITAM in Mexico. My work combines technical expertise
 with a passion for using data science to solve real-world problems—from environmental advocacy
 to public health compliance and business intelligence.
@@ -192,7 +192,7 @@ skills={['AWS Lambda', 'EC2', 'Neptune', 'S3', 'IAM', 'SQS', 'SNS', 'Route53', '
 <h2 className="text-2xl font-normal text-zinc-100">Education</h2>
 <div className="space-y-6 max-w-2xl">
 <div className="space-y-1">
-<h3 className="font-normal text-zinc-100">M.S. in Computational Analysis and Public Policy</h3>
+<h3 className="font-normal text-zinc-100">M.S. in Computational Analysis and Public Policy (MSCAPP)</h3>
 <p className="text-sm text-zinc-500">University of Chicago</p>
 <p className="text-sm text-zinc-600">June 2024</p>
 </div>
