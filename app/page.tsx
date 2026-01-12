@@ -12,23 +12,53 @@ return (
 <h1 className="text-3xl md:text-4xl font-normal text-zinc-100">
 Federico Dominguez Molina
 </h1>
-<p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-Data Scientist building systems that transform data into actionable insights for social impact and business growth.
-Currently working on environmental advocacy and public health at the <span className="text-zinc-100">Energy & Environment Lab</span>.
-</p>
-<div className="flex gap-6 text-sm">
-<a href="#projects" className="text-zinc-400 hover:text-zinc-100 transition-colors">Projects</a>
-<a href="#experience" className="text-zinc-400 hover:text-zinc-100 transition-colors">Experience</a>
-<a href="#contact" className="text-zinc-400 hover:text-zinc-100 transition-colors">Contact</a>
+<div className="flex flex-wrap gap-3">
+<a
+href="mailto:fd.molina@outlook.com"
+className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors text-sm"
+>
+Email
+</a>
+<a
+href="https://github.com/FedericoDM"
+target="_blank"
+rel="noopener noreferrer"
+className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors text-sm"
+>
+GitHub
+</a>
+<a
+href="https://linkedin.com/in/federico-dominguez-molina"
+target="_blank"
+rel="noopener noreferrer"
+className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors text-sm"
+>
+LinkedIn
+</a>
+<a
+href="/Resume_FedericoDominguezMolina.pdf"
+target="_blank"
+rel="noopener noreferrer"
+className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors text-sm"
+>
+Resume
+</a>
 </div>
+<p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
+Data Scientist and Engineer @ <span className="text-zinc-100">Energy & Environment Lab</span>
+</p>
 </section>
 
 {/* About Section */}
 <section id="about" className="space-y-8">
 <h2 className="text-2xl font-normal text-zinc-100">About</h2>
-<div className="space-y-6 max-w-2xl">
+<div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 max-w-3xl">
+<p className="text-base text-zinc-300 leading-relaxed mb-6">
+Data Scientist building systems that transform data into actionable insights for social impact and business growth.
+Currently working on environmental advocacy and public health at the Energy & Environment Lab.
+</p>
 <p className="text-zinc-400 leading-relaxed">
-I hold an M.S. in Computational Analysis and Public Policy from the University of Chicago
+I hold an M.S. in Computational Analysis and Public Policy (MSCAPP) from the University of Chicago
 and a B.A. in Economics (Honors) from ITAM in Mexico. My work combines technical expertise
 with a passion for using data science to solve real-world problems—from environmental advocacy
 to public health compliance and business intelligence.
@@ -62,22 +92,6 @@ to public health compliance and business intelligence.
 <div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
-<h3 className="font-normal text-zinc-100">Senior Data Scientist</h3>
-<p className="text-sm text-zinc-500">deep_dive</p>
-</div>
-<span className="text-sm text-zinc-600">Oct 2021 - Oct 2023</span>
-</div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>• Led automatic alert system for 20+ clients to improve customer relationships via social media analytics</li>
-<li>• Built serverless architecture collecting data on 250,000+ commercial goods for strategic pricing</li>
-<li>• Developed ML recommender system offering customized loans to 500,000+ borrowers</li>
-</ul>
-</div>
-
-<div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
-<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-<div>
 <h3 className="font-normal text-zinc-100">Data Science Research Assistant</h3>
 <p className="text-sm text-zinc-500">University of Chicago</p>
 </div>
@@ -103,12 +117,44 @@ to public health compliance and business intelligence.
 <li>• Built Python data platform for Long Beach Climate Office accessing 2010-2023 data</li>
 </ul>
 </div>
+
+<div className="relative space-y-3 sm:pl-8">
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+<div>
+<h3 className="font-normal text-zinc-100">Senior Data Scientist</h3>
+<p className="text-sm text-zinc-500">deep_dive</p>
+</div>
+<span className="text-sm text-zinc-600">Oct 2021 - Oct 2023</span>
+</div>
+<ul className="space-y-2 text-sm text-zinc-500">
+<li>• Led automatic alert system for 20+ clients to improve customer relationships via social media analytics</li>
+<li>• Built serverless architecture collecting data on 250,000+ commercial goods for strategic pricing</li>
+<li>• Developed ML recommender system offering customized loans to 500,000+ borrowers</li>
+</ul>
+</div>
+
+<div className="relative space-y-3 sm:pl-8">
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+<div>
+<h3 className="font-normal text-zinc-100">Junior Data Scientist</h3>
+<p className="text-sm text-zinc-500">deep_dive</p>
+</div>
+<span className="text-sm text-zinc-600">June 2020 - Oct 2021</span>
+</div>
+<ul className="space-y-2 text-sm text-zinc-500">
+<li>• Extracted and parsed data from key Mexican governmental sources for strategic analysis</li>
+<li>• Implemented dynamic Power BI dashboard to monitor government projects and infrastructure</li>
+<li>• Devised supervised ML models achieving top inflation forecaster status in Mexico</li>
+</ul>
+</div>
 </div>
 </section>
 
 {/* Projects Section */}
 <section id="projects" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Projects</h2>
+<h2 className="text-2xl font-normal text-zinc-100">Highlighted Projects</h2>
 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
 {projects.map(p => <ProjectCard key={p.slug} project={p} />)}
 </div>
@@ -134,7 +180,7 @@ icon={
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
 </svg>
 }
-skills={['scikit-learn', 'xgboost', 'pytorch', 'tensorflow', 'statsmodels', 'regression', 'classification', 'neural networks', 'forecasting', 'recommendation systems']}
+skills={['scikit-learn', 'xgboost', 'pytorch', 'statsmodels', 'regression', 'classification', 'neural networks', 'forecasting', 'recommendation systems']}
 />
 <SkillCard
 title="NLP & AI"
@@ -143,7 +189,7 @@ icon={
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
 </svg>
 }
-skills={['transformers', 'BERT', 'GPT', 'spaCy', 'NLTK', 'sentiment analysis', 'text classification', 'regex', 'entity recognition']}
+skills={['transformers', 'BERT', 'GPT', 'spaCy', 'NLTK', 'sentiment analysis', 'text classification', 'regex', 'entity recognition', 'finetuning']}
 />
 <SkillCard
 title="Cloud & DevOps"
@@ -162,7 +208,7 @@ skills={['AWS Lambda', 'EC2', 'Neptune', 'S3', 'IAM', 'SQS', 'SNS', 'Route53', '
 <h2 className="text-2xl font-normal text-zinc-100">Education</h2>
 <div className="space-y-6 max-w-2xl">
 <div className="space-y-1">
-<h3 className="font-normal text-zinc-100">M.S. in Computational Analysis and Public Policy</h3>
+<h3 className="font-normal text-zinc-100">M.S. in Computational Analysis and Public Policy (MSCAPP)</h3>
 <p className="text-sm text-zinc-500">University of Chicago</p>
 <p className="text-sm text-zinc-600">June 2024</p>
 </div>
