@@ -12,6 +12,38 @@ return (
 <h1 className="text-3xl md:text-4xl font-normal text-zinc-100">
 Federico Dominguez Molina
 </h1>
+<div className="flex flex-wrap gap-3">
+<a
+href="mailto:fd.molina@outlook.com"
+className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors text-sm"
+>
+Email
+</a>
+<a
+href="https://github.com/FedericoDM"
+target="_blank"
+rel="noopener noreferrer"
+className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors text-sm"
+>
+GitHub
+</a>
+<a
+href="https://linkedin.com/in/federico-dominguez-molina"
+target="_blank"
+rel="noopener noreferrer"
+className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors text-sm"
+>
+LinkedIn
+</a>
+<a
+href="/Resume_FedericoDominguezMolina.pdf"
+target="_blank"
+rel="noopener noreferrer"
+className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors text-sm"
+>
+Resume
+</a>
+</div>
 <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
 Data Scientist and Engineer @ <span className="text-zinc-100">Energy & Environment Lab</span>
 </p>
