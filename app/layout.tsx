@@ -22,7 +22,7 @@ return (
     <body className="bg-[#0a0a0a] text-zinc-100">
     <header className="border-b border-zinc-800">
     <nav className="mx-auto max-w-3xl px-6 py-6 flex items-center justify-between">
-    <a href="#home" className="font-normal text-zinc-100 hover:text-zinc-400 transition-colors">Federico Dominguez</a>
+    <a href="#home" className="text-lg font-medium text-secondary hover:text-secondary-light transition-colors">FDM</a>
     <div className="hidden sm:flex items-center gap-8 text-sm">
     <a href="#about" className="text-zinc-400 hover:text-zinc-100 transition-colors">About</a>
     <a href="#experience" className="text-zinc-400 hover:text-zinc-100 transition-colors">Experience</a>

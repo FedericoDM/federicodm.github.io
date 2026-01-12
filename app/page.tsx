@@ -47,12 +47,6 @@ Resume
 <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
 Data Scientist and Engineer @ <span className="text-zinc-100">Energy & Environment Lab</span>
 </p>
-<div className="flex gap-6 text-sm">
-<a href="#about" className="text-zinc-400 hover:text-zinc-100 transition-colors">About</a>
-<a href="#projects" className="text-zinc-400 hover:text-zinc-100 transition-colors">Projects</a>
-<a href="#experience" className="text-zinc-400 hover:text-zinc-100 transition-colors">Experience</a>
-<a href="#contact" className="text-zinc-400 hover:text-zinc-100 transition-colors">Contact</a>
-</div>
 </section>
 
 {/* About Section */}
@@ -144,7 +138,7 @@ to public health compliance and business intelligence.
 
 {/* Projects Section */}
 <section id="projects" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Projects</h2>
+<h2 className="text-2xl font-normal text-zinc-100">Highlighted Projects</h2>
 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
 {projects.map(p => <ProjectCard key={p.slug} project={p} />)}
 </div>
