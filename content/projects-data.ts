@@ -19,13 +19,6 @@ export const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=450&fit=crop',
   },
   {
-    slug: 'water-compliance-verification',
-    title: 'Public Water Systems Compliance Verification',
-    description: 'Implemented 10+ in-house algorithms to verify compliance of 350,000 Public Water Systems across the US for 45+ different pollutants.',
-    tags: ['Python', 'Data Engineering', 'Public Health', 'Algorithms'],
-    image: 'https://images.unsplash.com/photo-1583224964940-2c47f36a40e9?w=800&h=450&fit=crop',
-  },
-  {
     slug: 'fastapi-research-platform',
     title: 'Interactive Laboratory Games Platform',
     description: 'Co-developed FastAPI web platform to play laboratory games and inform research on children decision-making behavior.',
@@ -44,7 +37,7 @@ export const projects: Project[] = [
     title: 'Long Beach Climate Data Platform',
     description: 'Built a Python data platform allowing City of Long Beach Climate Office to download data from 2010-2023, improving access and saving hundreds of work hours annually.',
     tags: ['Python', 'Data Engineering', 'Climate', 'Civic Tech'],
-    image: 'https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=800&h=450&fit=crop',
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=450&fit=crop',
   },
   {
     slug: 'social-media-analytics',
