@@ -13,10 +13,10 @@ return (
 Federico Dominguez Molina
 </h1>
 <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-Data Scientist building systems that transform data into actionable insights for social impact and business growth.
-Currently working on environmental advocacy and public health at the <span className="text-zinc-100">Energy & Environment Lab</span>.
+Data Scientist and Engineer @ <span className="text-zinc-100">Energy & Environment Lab</span>
 </p>
 <div className="flex gap-6 text-sm">
+<a href="#about" className="text-zinc-400 hover:text-zinc-100 transition-colors">About</a>
 <a href="#projects" className="text-zinc-400 hover:text-zinc-100 transition-colors">Projects</a>
 <a href="#experience" className="text-zinc-400 hover:text-zinc-100 transition-colors">Experience</a>
 <a href="#contact" className="text-zinc-400 hover:text-zinc-100 transition-colors">Contact</a>
@@ -26,7 +26,11 @@ Currently working on environmental advocacy and public health at the <span class
 {/* About Section */}
 <section id="about" className="space-y-8">
 <h2 className="text-2xl font-normal text-zinc-100">About</h2>
-<div className="space-y-6 max-w-2xl">
+<div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 max-w-3xl">
+<p className="text-base text-zinc-300 leading-relaxed mb-6">
+Data Scientist building systems that transform data into actionable insights for social impact and business growth.
+Currently working on environmental advocacy and public health at the Energy & Environment Lab.
+</p>
 <p className="text-zinc-400 leading-relaxed">
 I hold an M.S. in Computational Analysis and Public Policy from the University of Chicago
 and a B.A. in Economics (Honors) from ITAM in Mexico. My work combines technical expertise
