@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title: 'ML Loan Recommendation System',
     description: 'Developed machine learning recommender system to offer customized loans to over 500,000 borrowers, improving conversion rates.',
     tags: ['Python', 'ML', 'scikit-learn', 'Recommendation Systems'],
-    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=450&fit=crop',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=450&fit=crop',
   },
   {
     slug: 'social-media-analytics',
