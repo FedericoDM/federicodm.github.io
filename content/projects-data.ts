@@ -13,7 +13,7 @@ export const projects: Project[] = [
     slug: 'air-pollution-alert-system',
     title: 'Global Air Pollution Alert System',
     description: 'Pioneered a global alert system targeting air pollution advocates from 30+ cities using X (Twitter), natural language processing, graph analysis, and real-time pollution data.',
-    tags: ['Python', 'NLP', 'Graph Analysis', 'Real-time Data'],
+    tags: ['Python', 'NLP', 'AWS', 'Graph Analysis', 'Real-time Data'],
     link: 'https://climate.uchicago.edu/entities/empowering-environmental-governance-with-satellite-data-a-global-randomized-control-trial/',
     image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=450&fit=crop',
   },
@@ -21,7 +21,7 @@ export const projects: Project[] = [
     slug: 'automated-trading-platform',
     title: 'Automated Trading Platform',
     description: 'Designed EC2 architecture and Python code to auto-trade over 10+ portfolios through Interactive Brokers with daily stock price ingestion.',
-    tags: ['Python', 'AWS EC2', 'Trading', 'Automation'],
+    tags: ['Python', 'AWS EC2', 'Trading', 'SQL', 'Automation',],
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop',
   },
   {
