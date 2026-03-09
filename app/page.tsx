@@ -83,8 +83,9 @@ to public health compliance and business intelligence.
 <span className="text-sm text-zinc-600">June 2024 - Present</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500">
-<li>• Pioneered global alert system targeting air pollution advocates across 30+ cities using NLP, graph analysis, and real-time data</li>
-<li>• Implemented 10+ algorithms to verify compliance of 350,000 US Public Water Systems for 45+ pollutants</li>
+<li>• Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</li>
+<li>• Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</li>
+<li>• Implemented 10+ algorithms to verify compliance of 350,000 US Public Water Systems across 45+ pollutants, reducing manual review time by 75%</li>
 </ul>
 </div>
 
@@ -98,7 +99,7 @@ to public health compliance and business intelligence.
 <span className="text-sm text-zinc-600">Feb 2023 - June 2024</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500">
-<li>• Co-developed FastAPI web platform for laboratory games informing children's decision-making research</li>
+<li>• Co-developed FastAPI web platform for behavioral research games studying children's decision-making</li>
 <li>• Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</li>
 </ul>
 </div>
@@ -144,9 +145,9 @@ to public health compliance and business intelligence.
 <span className="text-sm text-zinc-600">June 2020 - Oct 2021</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500">
-<li>• Extracted and parsed data from key Mexican governmental sources for strategic analysis</li>
-<li>• Implemented dynamic Power BI dashboard to monitor government projects and infrastructure</li>
-<li>• Devised supervised ML models achieving top inflation forecaster status in Mexico</li>
+<li>• Extracted and parsed data from key Mexican governmental sources to support decision-making for 10+ clients</li>
+<li>• Implemented dynamic Power BI dashboard to monitor government projects and infrastructure, proactively flagging 50+ potential risks</li>
+<li>• Devised supervised ML models achieving top inflation forecaster status in Mexico with an RMSE of 2%</li>
 </ul>
 </div>
 </div>
