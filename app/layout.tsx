@@ -5,11 +5,11 @@ import { MobileMenu } from '@/components/MobileMenu';
 
 
 export const metadata: Metadata = {
-title: "Federico Dominguez Molina — Data Scientist",
-description: "Data Scientist building systems that transform data into actionable insights for social impact and business growth. M.S. in Computational Analysis from UChicago.",
+title: "Federico Dominguez Molina — Data Scientist & Engineer",
+description: "Data Scientist & Engineer building agentic pipelines, LLM systems, and data automation for social impact and business. M.S. in Computational Analysis from UChicago.",
 openGraph: {
-title: "Federico Dominguez Molina — Data Scientist",
-description: "Data Scientist building systems that transform data into actionable insights for social impact and business growth.",
+title: "Federico Dominguez Molina — Data Scientist & Engineer",
+description: "Data Scientist & Engineer building agentic pipelines, LLM systems, and data automation for social impact and business.",
 images: ['/og.png']
 },
 metadataBase: new URL('https://federicodm.github.io')
@@ -21,7 +21,7 @@ return (
     <html lang="en" className="scroll-smooth">
     <body className="bg-[#0a0a0a] text-zinc-100">
     <header className="border-b border-zinc-800">
-    <nav className="mx-auto max-w-3xl px-6 py-6 flex items-center justify-between">
+    <nav className="mx-auto max-w-5xl px-6 py-6 flex items-center justify-between">
     <a href="#home" className="text-lg font-medium text-secondary hover:text-secondary-light transition-colors">FDM</a>
     <div className="hidden sm:flex items-center gap-8 text-sm">
     <a href="#about" className="text-zinc-400 hover:text-zinc-100 transition-colors">About</a>
@@ -32,8 +32,8 @@ return (
     <MobileMenu />
     </nav>
     </header>
-    <main className="mx-auto max-w-3xl px-6 py-16">{children}</main>
-    <footer className="mx-auto max-w-3xl px-6 py-12 border-t border-zinc-800">
+    <main className="mx-auto max-w-5xl px-6 py-16">{children}</main>
+    <footer className="mx-auto max-w-5xl px-6 py-12 border-t border-zinc-800">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm text-zinc-600">
         <div>© {new Date().getFullYear()} Federico Dominguez Molina</div>
         <div className="flex gap-6">
