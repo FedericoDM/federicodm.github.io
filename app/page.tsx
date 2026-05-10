@@ -51,19 +51,27 @@ Data Scientist and Engineer @ <span className="text-zinc-100">Energy & Environme
 
 {/* About Section */}
 <section id="about" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">About</h2>
-<div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 max-w-3xl">
-<p className="text-base text-zinc-300 leading-relaxed mb-6">
-Data Scientist building systems that transform data into actionable insights for social impact and business growth.
-Currently working on environmental advocacy and public health at the Energy & Environment Lab.
-</p>
-<p className="text-zinc-400 leading-relaxed">
-I hold an M.S. in Computational Analysis and Public Policy (MSCAPP) from the University of Chicago
-and a B.A. in Economics (Honors) from ITAM in Mexico. My work combines technical expertise
-with a passion for using data science to solve real-world problems—from environmental advocacy
-to public health compliance and business intelligence.
-</p>
-</div>
+  <h2 className="text-2xl font-normal text-zinc-100">About</h2>
+  <div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 max-w-3xl space-y-6">
+    <p className="text-base text-zinc-300 leading-relaxed">
+      I'm a data scientist passionate about turning messy, real-world data into
+      insights that drive decisions—especially when those decisions improve outcomes
+      for underrepresented communities.
+    </p>
+    <p className="text-zinc-400 leading-relaxed">
+      Over the past five+ years I've built end-to-end pipelines for everything from
+      satellite-driven pollution alerts (in a World Bank– and NASA-backed RCT) to
+      LLM-powered classification systems, an ML recommender serving 500,000+
+      borrowers, and an AI agent that analyzes investment portfolios against
+      macroeconomic regimes. I work primarily in <span className="text-zinc-100">Python</span> on
+      <span className="text-zinc-100"> AWS</span> and <span className="text-zinc-100">GCP</span>,
+      and I'm happiest at the intersection of ML/AI engineering and social impact.
+    </p>
+    <p className="text-zinc-400 leading-relaxed">
+      I hold an M.S. in Computational Analysis and Public Policy from the University
+      of Chicago and a B.A. in Economics (Honors) from ITAM in Mexico City.
+    </p>
+  </div>
 </section>
 
 {/* Experience Section */}
@@ -83,9 +91,12 @@ to public health compliance and business intelligence.
 <span className="text-sm text-zinc-600">June 2024 - Present</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500">
-<li>• Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</li>
-<li>• Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</li>
-<li>• Implemented 10+ algorithms to verify compliance of 350,000 US Public Water Systems across 45+ pollutants, reducing manual review time by 75%</li>
+<li>Implemented multi-platform content dissemination pipelines (YouTube, WhatsApp) within a World Bank & NASA-backed randomized controlled trial — this one especially, it's a huge credibility signal</li>
+<li>Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</li>
+<li>Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</li>
+<li>Implemented 10+ algorithms to verify compliance of 350,000 US Public Water Systems across 45+ pollutants, reducing manual review time by 75%</li>
+<li>Led LLM classification improvement from 65% → 87% accuracy via prompt engineering</li>
+<li>Built BigQuery ETL pipeline on GCP to process GDELT data across 800 African cities</li>
 </ul>
 </div>
 
@@ -99,8 +110,8 @@ to public health compliance and business intelligence.
 <span className="text-sm text-zinc-600">Feb 2023 - June 2024</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500">
-<li>• Co-developed FastAPI web platform for behavioral research games studying children's decision-making</li>
-<li>• Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</li>
+<li>Co-developed FastAPI web platform for behavioral research games studying children's decision-making</li>
+<li>Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</li>
 </ul>
 </div>
 
@@ -114,8 +125,8 @@ to public health compliance and business intelligence.
 <span className="text-sm text-zinc-600">June 2023 - Aug 2023</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500">
-<li>• Automated data collection & cleaning for six websites, reducing 10+ weekly hours of manual work</li>
-<li>• Built Python data platform for Long Beach Climate Office accessing 2010-2023 data</li>
+<li>Automated data collection & cleaning for six websites, reducing 10+ weekly hours of manual work</li>
+<li>Built Python data platform for Long Beach Climate Office accessing 2010-2023 data</li>
 </ul>
 </div>
 
@@ -129,9 +140,9 @@ to public health compliance and business intelligence.
 <span className="text-sm text-zinc-600">Oct 2021 - Oct 2023</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500">
-<li>• Led automatic alert system for 20+ clients to improve customer relationships via social media analytics</li>
-<li>• Built serverless architecture collecting data on 250,000+ commercial goods for strategic pricing</li>
-<li>• Developed ML recommender system offering customized loans to 500,000+ borrowers</li>
+<li>Led automatic alert system for 20+ clients to improve customer relationships via social media analytics</li>
+<li>Built serverless architecture collecting data on 250,000+ commercial goods for strategic pricing</li>
+<li>Developed ML recommender system offering customized loans to 500,000+ borrowers</li>
 </ul>
 </div>
 
@@ -145,9 +156,9 @@ to public health compliance and business intelligence.
 <span className="text-sm text-zinc-600">June 2020 - Oct 2021</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500">
-<li>• Extracted and parsed data from key Mexican governmental sources to support decision-making for 10+ clients</li>
-<li>• Implemented dynamic Power BI dashboard to monitor government projects and infrastructure, proactively flagging 50+ potential risks</li>
-<li>• Devised supervised ML models achieving top inflation forecaster status in Mexico with an RMSE of 2%</li>
+<li>Extracted and parsed data from key Mexican governmental sources to support decision-making for 10+ clients</li>
+<li>Implemented dynamic Power BI dashboard to monitor government projects and infrastructure, proactively flagging 50+ potential risks</li>
+<li>Devised supervised ML models achieving top inflation forecaster status in Mexico with an RMSE of 2%</li>
 </ul>
 </div>
 </div>
@@ -200,6 +211,15 @@ icon={
 </svg>
 }
 skills={['AWS Lambda', 'EC2', 'Neptune', 'RDS', 'DynamoDB', 'S3', 'IAM', 'SQS', 'SNS', 'Route53', 'Databricks', 'Docker', 'serverless']}
+/>
+<SkillCard
+title="LLMs & AI Agents"
+icon={
+    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+    </svg>
+  }
+skills={['Claude API', 'Prompt Engineering', 'Function Calling', 'Tool Use', 'AI Agents', 'Finetuning', 'HuggingFace', 'transformers', 'pytorch', 'Flan-T5']}
 />
 </div>
 </section>
