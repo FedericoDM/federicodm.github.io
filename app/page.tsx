@@ -58,7 +58,11 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
 
 {/* About Section */}
 <section id="about" className="space-y-8">
-  <h2 className="text-2xl font-normal text-zinc-100">About</h2>
+  <div className="space-y-3">
+    <p className="text-xs font-mono uppercase tracking-widest text-secondary">About Me</p>
+    <h2 className="text-2xl font-normal text-zinc-100">About</h2>
+    <div className="w-11 h-px bg-secondary" />
+  </div>
   <div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 max-w-3xl space-y-6">
     <p className="text-base text-zinc-300 leading-relaxed">
       I'm a data scientist passionate about turning messy, real-world data into
@@ -82,13 +86,17 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
 
 {/* Experience Section */}
 <section id="experience" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Experience</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Work History</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Experience</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="relative space-y-8 max-w-2xl">
 {/* Timeline line */}
 <div className="absolute left-0 top-2 bottom-2 w-px bg-zinc-800 hidden sm:block" />
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px', boxShadow: '0 0 8px rgba(59,130,246,0.6)'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Scientist</h3>
@@ -96,17 +104,17 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
 </div>
 <span className="text-sm text-zinc-600">June 2024 - Present</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>Implemented multi-platform content dissemination pipelines (YouTube, WhatsApp) within a World Bank & NASA-backed randomized controlled trial</li>
-<li>Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</li>
-<li>Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</li>
-<li>Led LLM classification improvement from 65% → 87% accuracy via prompt engineering — built annotated datasets and iterative evaluation loops for systematic prompt adjustment</li>
-<li>Built BigQuery ETL pipeline on GCP to process GDELT data across 800 African cities</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Implemented multi-platform content dissemination pipelines (YouTube, WhatsApp) within a World Bank & NASA-backed randomized controlled trial</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Led LLM classification improvement from 65% → 87% accuracy via prompt engineering — built annotated datasets and iterative evaluation loops for systematic prompt adjustment</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built BigQuery ETL pipeline on GCP to process GDELT data across 800 African cities</span></li>
 </ul>
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Science Research Assistant</h3>
@@ -114,14 +122,14 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
 </div>
 <span className="text-sm text-zinc-600">Feb 2023 - June 2024</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>Co-developed FastAPI web platform for behavioral research games studying children's decision-making</li>
-<li>Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Co-developed FastAPI web platform for behavioral research games studying children's decision-making</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</span></li>
 </ul>
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Engineering Fellow</h3>
@@ -129,14 +137,14 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
 </div>
 <span className="text-sm text-zinc-600">June 2023 - Aug 2023</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>Automated data collection & cleaning for six websites, reducing 10+ weekly hours of manual work</li>
-<li>Built Python data platform for Long Beach Climate Office accessing 2010-2023 data</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Automated data collection & cleaning for six websites, reducing 10+ weekly hours of manual work</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built Python data platform for Long Beach Climate Office accessing 2010-2023 data</span></li>
 </ul>
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Senior Data Scientist</h3>
@@ -144,15 +152,15 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
 </div>
 <span className="text-sm text-zinc-600">Oct 2021 - Oct 2023</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>Led automatic alert system for 20+ clients to improve customer relationships via social media analytics</li>
-<li>Built serverless architecture collecting data on 250,000+ commercial goods for strategic pricing</li>
-<li>Developed ML recommender system offering customized loans to 500,000+ borrowers</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Led automatic alert system for 20+ clients to improve customer relationships via social media analytics</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built serverless architecture collecting data on 250,000+ commercial goods for strategic pricing</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Developed ML recommender system offering customized loans to 500,000+ borrowers</span></li>
 </ul>
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Junior Data Scientist</h3>
@@ -160,10 +168,10 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
 </div>
 <span className="text-sm text-zinc-600">June 2020 - Oct 2021</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>Extracted and parsed data from key Mexican governmental sources to support decision-making for 10+ clients</li>
-<li>Implemented dynamic Power BI dashboard to monitor government projects and infrastructure, proactively flagging 50+ potential risks</li>
-<li>Devised supervised ML models achieving top inflation forecaster status in Mexico with an RMSE of 2%</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Extracted and parsed data from key Mexican governmental sources to support decision-making for 10+ clients</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Implemented dynamic Power BI dashboard to monitor government projects and infrastructure, proactively flagging 50+ potential risks</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Devised supervised ML models achieving top inflation forecaster status in Mexico with an RMSE of 2%</span></li>
 </ul>
 </div>
 </div>
@@ -171,7 +179,11 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
 
 {/* Projects Section */}
 <section id="projects" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Highlighted Projects</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Selected Work</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Highlighted Projects</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
 {projects.map(p => <ProjectCard key={p.slug} project={p} />)}
 </div>
@@ -179,7 +191,11 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
 
 {/* Skills Section */}
 <section id="skills" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Skills & Expertise</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Technical Stack</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Skills & Expertise</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="grid md:grid-cols-2 gap-6">
 <SkillCard
 title="Python"
@@ -231,7 +247,11 @@ skills={['Claude API', 'Prompt Engineering', 'Function Calling', 'Tool Use', 'AI
 
 {/* Education Section */}
 <section id="education" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Education</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Background</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Education</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="space-y-6 max-w-2xl">
 <div className="space-y-1">
 <h3 className="font-normal text-zinc-100">M.S. in Computational Analysis and Public Policy (MSCAPP)</h3>
@@ -248,7 +268,11 @@ skills={['Claude API', 'Prompt Engineering', 'Function Calling', 'Tool Use', 'AI
 
 {/* Publications Section */}
 <section id="publications" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Publications</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Research</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Publications</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="max-w-2xl">
 <a
 href="https://www.cambridge.org/core/journals/law-and-society-review/article/academic-copaganda/1D096FAF1C38403739FCBB8D482FE24A"
@@ -265,7 +289,11 @@ className="group block"
 
 {/* Featured Section */}
 <section id="featured" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Featured</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">In the Press</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Featured</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="max-w-2xl space-y-4">
 <a
 href="https://blog.codingitforward.com/meet-the-2023-fellows-federico-dominguez-molina-a1bf4f5df171"
@@ -292,7 +320,11 @@ className="block group"
 
 {/* Contact Section */}
 <section id="contact" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Contact</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Get in Touch</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Contact</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="max-w-2xl space-y-6">
 <p className="text-zinc-400 leading-relaxed">
 I'm always interested in discussing data science challenges, social impact projects,
