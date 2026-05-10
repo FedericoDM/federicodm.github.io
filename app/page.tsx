@@ -92,7 +92,7 @@ Data Scientist & Engineer building <span className="text-zinc-100">agentic pipel
   <h2 className="text-2xl font-normal text-zinc-100">Experience</h2>
   <div className="w-11 h-px bg-secondary" />
 </div>
-<div className="relative space-y-8 max-w-2xl">
+<div className="relative space-y-8">
 {/* Timeline line */}
 <div className="absolute left-0 top-2 bottom-2 w-px bg-zinc-800 hidden sm:block" />
 
@@ -110,7 +110,6 @@ Data Scientist & Engineer building <span className="text-zinc-100">agentic pipel
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</span></li>
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</span></li>
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Led LLM classification improvement from 65% → 87% accuracy via prompt engineering — built annotated datasets and iterative evaluation loops for systematic prompt adjustment</span></li>
-<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built BigQuery ETL pipeline on GCP to process GDELT data across 800 African cities</span></li>
 </ul>
 </div>
 
@@ -155,8 +154,9 @@ Data Scientist & Engineer building <span className="text-zinc-100">agentic pipel
 </div>
 <ul className="space-y-2 text-sm text-zinc-500 list-none">
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Led automatic alert system for 20+ clients to improve customer relationships via social media analytics</span></li>
-<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built serverless architecture collecting data on 250,000+ commercial goods for strategic pricing</span></li>
-<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Developed ML recommender system offering customized loans to 500,000+ borrowers</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Architected serverless AWS infrastructure to collect and process pricing data for 250,000+ commercial goods, enabling realtime strategic pricing</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built and deployed an end-to-end recommender system for 500,000+ borrowers: applied K-Means clustering, engineered custom borrower features, and designed similarity metrics to match borrowers with optimal loan products
+</span></li>
 </ul>
 </div>
 
@@ -172,7 +172,7 @@ Data Scientist & Engineer building <span className="text-zinc-100">agentic pipel
 <ul className="space-y-2 text-sm text-zinc-500 list-none">
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Extracted and parsed data from key Mexican governmental sources to support decision-making for 10+ clients</span></li>
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Implemented dynamic Power BI dashboard to monitor government projects and infrastructure, proactively flagging 50+ potential risks</span></li>
-<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Devised supervised ML models achieving top inflation forecaster status in Mexico with an RMSE of 2%</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built the company's inflation forecasting capability from scratch: developed XGBoost, Random Forest, linear regression models and an ensemble of all three — making the firm a top-ranked inflation forecaster</span></li>
 </ul>
 </div>
 </div>
