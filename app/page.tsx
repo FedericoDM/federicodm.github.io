@@ -52,7 +52,7 @@ Resume
 </a>
 </div>
 <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-Data Scientist & ML Engineer building <span className="text-zinc-100">LLM systems for social impact</span>
+Data Scientist & Engineer building <span className="text-zinc-100">agentic pipelines, LLM systems & automation</span>
 </p>
 </section>
 
@@ -65,21 +65,22 @@ Data Scientist & ML Engineer building <span className="text-zinc-100">LLM system
   </div>
   <div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 max-w-3xl space-y-6">
     <p className="text-base text-zinc-300 leading-relaxed">
-      I'm a data scientist passionate about turning messy, real-world data into
-      insights that drive decisions—especially when those decisions improve outcomes
-      for underrepresented communities.
+      I'm a Data Scientist and Engineer passionate about drawing insights from structured
+      and unstructured data—whether to improve outcomes for underrepresented communities
+      or solve hard problems in finance, healthcare, and government.
     </p>
     <p className="text-zinc-400 leading-relaxed">
-      Over the past five+ years I've built end-to-end pipelines for everything from
-      satellite-driven pollution alerts (in a World Bank– and NASA-backed RCT) to
-      LLM-powered classification systems, an ML recommender serving 500,000+
-      borrowers, and an AI agent that analyzes investment portfolios against
-      macroeconomic regimes. I work primarily in <span className="text-zinc-100">Python</span> and
-      <span className="text-zinc-100"> AWS</span>, and I'm happiest at the intersection of ML/AI engineering and social impact.
+      Over five+ years I've built end-to-end systems across sectors: satellite-driven
+      pollution alerts in a <span className="text-zinc-100">World Bank & NASA-backed RCT</span>, LLM-powered
+      classification pipelines, an ML recommender serving <span className="text-zinc-100">500,000+ borrowers</span>,
+      agentic workflows for automated data extraction, and process automation at scale.
     </p>
     <p className="text-zinc-400 leading-relaxed">
-      I hold an M.S. in Computational Analysis and Public Policy from the University
-      of Chicago and a B.A. in Economics (Honors) from ITAM in Mexico City.
+      My current focus is <span className="text-zinc-100">Agentic Workflows and LLMs</span>. I work primarily
+      in Python, AWS, and GCP, and my goal is to tackle public policy and business
+      challenges with state-of-the-art ML tools. I hold an M.S. in Computational
+      Analysis and Public Policy from the University of Chicago and a B.A. in Economics
+      (Honors) from ITAM in Mexico City.
     </p>
   </div>
 </section>
