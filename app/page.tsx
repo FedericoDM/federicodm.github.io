@@ -9,9 +9,16 @@ return (
 <div className="space-y-24">
 {/* Hero Section */}
 <section id="home" className="space-y-6">
-<h1 className="text-3xl md:text-4xl font-normal text-zinc-100">
-Federico Dominguez Molina
-</h1>
+<div className="flex items-center gap-6">
+  <img
+    src="/FedericoDominguezMolina_Headshot.jpg"
+    alt="Federico Dominguez Molina"
+    className="w-20 h-20 rounded-full object-cover object-top flex-shrink-0 ring-1 ring-zinc-700"
+  />
+  <h1 className="text-3xl md:text-4xl font-normal text-zinc-100">
+    Federico Dominguez Molina
+  </h1>
+</div>
 <div className="flex flex-wrap gap-3">
 <a
 href="mailto:fd.molina@outlook.com"
@@ -45,7 +52,7 @@ Resume
 </a>
 </div>
 <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-Data Scientist and Engineer @ <span className="text-zinc-100">Energy & Environment Lab</span>
+Data Scientist & ML Engineer building <span className="text-zinc-100">LLM systems for social impact</span>
 </p>
 </section>
 
@@ -63,9 +70,8 @@ Data Scientist and Engineer @ <span className="text-zinc-100">Energy & Environme
       satellite-driven pollution alerts (in a World Bank– and NASA-backed RCT) to
       LLM-powered classification systems, an ML recommender serving 500,000+
       borrowers, and an AI agent that analyzes investment portfolios against
-      macroeconomic regimes. I work primarily in <span className="text-zinc-100">Python</span> on
-      <span className="text-zinc-100"> AWS</span> and <span className="text-zinc-100">GCP</span>,
-      and I'm happiest at the intersection of ML/AI engineering and social impact.
+      macroeconomic regimes. I work primarily in <span className="text-zinc-100">Python</span> and
+      <span className="text-zinc-100"> AWS</span>, and I'm happiest at the intersection of ML/AI engineering and social impact.
     </p>
     <p className="text-zinc-400 leading-relaxed">
       I hold an M.S. in Computational Analysis and Public Policy from the University
@@ -91,11 +97,10 @@ Data Scientist and Engineer @ <span className="text-zinc-100">Energy & Environme
 <span className="text-sm text-zinc-600">June 2024 - Present</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500">
-<li>Implemented multi-platform content dissemination pipelines (YouTube, WhatsApp) within a World Bank & NASA-backed randomized controlled trial — this one especially, it's a huge credibility signal</li>
+<li>Implemented multi-platform content dissemination pipelines (YouTube, WhatsApp) within a World Bank & NASA-backed randomized controlled trial</li>
 <li>Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</li>
 <li>Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</li>
-<li>Implemented 10+ algorithms to verify compliance of 350,000 US Public Water Systems across 45+ pollutants, reducing manual review time by 75%</li>
-<li>Led LLM classification improvement from 65% → 87% accuracy via prompt engineering</li>
+<li>Led LLM classification improvement from 65% → 87% accuracy via prompt engineering — built annotated datasets and iterative evaluation loops for systematic prompt adjustment</li>
 <li>Built BigQuery ETL pipeline on GCP to process GDELT data across 800 African cities</li>
 </ul>
 </div>
