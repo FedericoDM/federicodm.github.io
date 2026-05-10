@@ -12,7 +12,7 @@ export const projects: Project[] = [
   {
     slug: 'air-pollution-alert-system',
     title: 'Global Air Pollution Alert System',
-    description: 'Pioneered a global alert system targeting air pollution advocates from 30+ cities using X (Twitter), natural language processing, graph analysis, and real-time pollution data.',
+    description: 'Built within a World Bank & NASA-backed RCT: a global alert system targeting air pollution advocates from 30+ cities using X (Twitter), NLP, graph analysis, and real-time satellite pollution data. Reached 200,000+ impressions in three months.',
     tags: ['Python', 'NLP', 'AWS', 'Graph Analysis', 'Real-time Data'],
     link: 'https://climate.uchicago.edu/entities/empowering-environmental-governance-with-satellite-data-a-global-randomized-control-trial/',
     image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=450&fit=crop',
@@ -23,6 +23,13 @@ export const projects: Project[] = [
     description: 'Designed EC2 architecture and Python code to auto-trade over 10+ portfolios through Interactive Brokers with daily stock price ingestion.',
     tags: ['Python', 'AWS EC2', 'Trading', 'SQL', 'Automation',],
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop',
+  },
+  {
+    slug: 'ai-trading-agent',
+    title: 'AI Trading Agent',
+    description: 'Proof-of-concept AI agent built with Claude and custom tools to analyze investment portfolios against macroeconomic regimes and generate trade recommendations. Demonstrates LLM tool use, function calling, and agent orchestration patterns.',
+    tags: ['Claude API', 'AI Agent', 'Function Calling', 'Python', 'Trading'],
+    image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=450&fit=crop',
   },
   {
     slug: 'fastapi-research-platform',
