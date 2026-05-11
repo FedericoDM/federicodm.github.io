@@ -7,6 +7,9 @@ import { MobileMenu } from '@/components/MobileMenu';
 export const metadata: Metadata = {
 title: "Federico Dominguez Molina — Data Scientist & Engineer",
 description: "Data Scientist & Engineer building agentic pipelines, LLM systems, and data automation for social impact and business. M.S. in Computational Analysis from UChicago.",
+icons: {
+  icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='11' font-weight='600' fill='%233b82f6' text-anchor='middle'%3EFDM%3C/text%3E%3C/svg%3E",
+},
 openGraph: {
 title: "Federico Dominguez Molina — Data Scientist & Engineer",
 description: "Data Scientist & Engineer building agentic pipelines, LLM systems, and data automation for social impact and business.",
