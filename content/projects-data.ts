@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: 'AI Trading Agent',
     description: 'Proof-of-concept AI agent built with Claude and custom tools to analyze investment portfolios against macroeconomic regimes and generate trade recommendations. Demonstrates LLM tool use, function calling, and agent orchestration patterns.',
     tags: ['Claude API', 'AI Agent', 'Function Calling', 'Python', 'Trading'],
-    image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=450&fit=crop',
+    image: 'https://plus.unsplash.com/premium_photo-1725985758285-ca743318640e?w=800&h=450&fit=crop',
   },
   {
     slug: 'fastapi-research-platform',
