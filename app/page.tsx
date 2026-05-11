@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { projects } from '@/content/projects-data';
 import { ProjectCard } from '@/components/ProjectCard';
 import { SkillCard } from '@/components/SkillCard';
@@ -65,12 +64,12 @@ Data Scientist & Engineer building <span className="text-zinc-100">AI agents</sp
   </div>
   <div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 space-y-6">
     <p className="text-base text-zinc-300 leading-relaxed">
-      I'm a Data Scientist and Engineer passionate about drawing insights from structured
+      I&apos;m a Data Scientist and Engineer passionate about drawing insights from structured
       and unstructured data—whether to improve outcomes for underrepresented communities
       or solve hard problems in finance, healthcare, and government.
     </p>
     <p className="text-zinc-400 leading-relaxed">
-      Over five+ years I've built end-to-end systems across sectors: satellite-driven
+      Over five+ years I&apos;ve built end-to-end systems across sectors: satellite-driven
       pollution alerts in a <span className="text-zinc-100">World Bank & NASA-backed RCT</span>, LLM-powered
       classification pipelines, an ML recommender serving <span className="text-zinc-100">500,000+ borrowers</span>,
       agentic workflows for automated data extraction, and process automation at scale.
@@ -123,7 +122,7 @@ Data Scientist & Engineer building <span className="text-zinc-100">AI agents</sp
 <span className="text-sm text-zinc-600">Feb 2023 - June 2024</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500 list-none">
-<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Co-developed FastAPI web platform for behavioral research games studying children's decision-making</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Co-developed FastAPI web platform for behavioral research games studying children&apos;s decision-making</span></li>
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</span></li>
 </ul>
 </div>
@@ -172,7 +171,7 @@ Data Scientist & Engineer building <span className="text-zinc-100">AI agents</sp
 <ul className="space-y-2 text-sm text-zinc-500 list-none">
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Extracted and parsed data from key Mexican governmental sources to support decision-making for 10+ clients</span></li>
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Implemented dynamic Power BI dashboard to monitor government projects and infrastructure, proactively flagging 50+ potential risks</span></li>
-<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built the company's inflation forecasting capability from scratch: developed XGBoost, Random Forest, linear regression models and an ensemble of all three — making the firm a top-ranked inflation forecaster</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built the company&apos;s inflation forecasting capability from scratch: developed XGBoost, Random Forest, linear regression models and an ensemble of all three — making the firm a top-ranked inflation forecaster</span></li>
 </ul>
 </div>
 </div>
@@ -328,7 +327,7 @@ className="block group"
 </div>
 <div className="max-w-2xl space-y-6">
 <p className="text-zinc-400 leading-relaxed">
-I'm always interested in discussing data science challenges, social impact projects,
+I&apos;m always interested in discussing data science challenges, social impact projects,
 or collaboration opportunities. Feel free to reach out.
 </p>
 <div className="flex flex-wrap gap-6 text-sm">

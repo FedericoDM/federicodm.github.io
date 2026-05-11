@@ -1,6 +1,5 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { MobileMenu } from '@/components/MobileMenu';
 
 
