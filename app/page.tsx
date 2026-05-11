@@ -9,9 +9,16 @@ return (
 <div className="space-y-24">
 {/* Hero Section */}
 <section id="home" className="space-y-6">
-<h1 className="text-3xl md:text-4xl font-normal text-zinc-100">
-Federico Dominguez Molina
-</h1>
+<div className="flex items-center gap-6">
+  <img
+    src="/FedericoDominguezMolina_Headshot.jpg"
+    alt="Federico Dominguez Molina"
+    className="w-20 h-20 rounded-full object-cover object-top flex-shrink-0 ring-1 ring-zinc-700"
+  />
+  <h1 className="text-3xl md:text-4xl font-normal text-zinc-100">
+    Federico Dominguez Molina
+  </h1>
+</div>
 <div className="flex flex-wrap gap-3">
 <a
 href="mailto:fd.molina@outlook.com"
@@ -45,36 +52,52 @@ Resume
 </a>
 </div>
 <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-Data Scientist and Engineer @ <span className="text-zinc-100">Energy & Environment Lab</span>
+Data Scientist & Engineer building <span className="text-zinc-100">AI agents</span>, <span className="text-zinc-100">LLM systems</span>, and <span className="text-zinc-100">end-to-end data pipelines</span>
 </p>
 </section>
 
 {/* About Section */}
 <section id="about" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">About</h2>
-<div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 max-w-3xl">
-<p className="text-base text-zinc-300 leading-relaxed mb-6">
-Data Scientist building systems that transform data into actionable insights for social impact and business growth.
-Currently working on environmental advocacy and public health at the Energy & Environment Lab.
-</p>
-<p className="text-zinc-400 leading-relaxed">
-I hold an M.S. in Computational Analysis and Public Policy (MSCAPP) from the University of Chicago
-and a B.A. in Economics (Honors) from ITAM in Mexico. My work combines technical expertise
-with a passion for using data science to solve real-world problems—from environmental advocacy
-to public health compliance and business intelligence.
-</p>
-</div>
+  <div className="space-y-3">
+    <p className="text-xs font-mono uppercase tracking-widest text-secondary">About Me</p>
+    <h2 className="text-2xl font-normal text-zinc-100">About</h2>
+    <div className="w-11 h-px bg-secondary" />
+  </div>
+  <div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 space-y-6">
+    <p className="text-base text-zinc-300 leading-relaxed">
+      I'm a Data Scientist and Engineer passionate about drawing insights from structured
+      and unstructured data—whether to improve outcomes for underrepresented communities
+      or solve hard problems in finance, healthcare, and government.
+    </p>
+    <p className="text-zinc-400 leading-relaxed">
+      Over five+ years I've built end-to-end systems across sectors: satellite-driven
+      pollution alerts in a <span className="text-zinc-100">World Bank & NASA-backed RCT</span>, LLM-powered
+      classification pipelines, an ML recommender serving <span className="text-zinc-100">500,000+ borrowers</span>,
+      agentic workflows for automated data extraction, and process automation at scale.
+    </p>
+    <p className="text-zinc-400 leading-relaxed">
+      My current focus is <span className="text-zinc-100">Agentic Workflows and LLMs</span>. I work primarily
+      in Python, AWS, and GCP, and my goal is to tackle public policy and business
+      challenges with state-of-the-art ML tools. I hold an M.S. in Computational
+      Analysis and Public Policy from the University of Chicago and a B.A. in Economics
+      (Honors) from ITAM in Mexico City.
+    </p>
+  </div>
 </section>
 
 {/* Experience Section */}
 <section id="experience" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Experience</h2>
-<div className="relative space-y-8 max-w-2xl">
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Work History</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Experience</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
+<div className="relative space-y-8">
 {/* Timeline line */}
 <div className="absolute left-0 top-2 bottom-2 w-px bg-zinc-800 hidden sm:block" />
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px', boxShadow: '0 0 8px rgba(59,130,246,0.6)'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Scientist</h3>
@@ -82,15 +105,16 @@ to public health compliance and business intelligence.
 </div>
 <span className="text-sm text-zinc-600">June 2024 - Present</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>• Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</li>
-<li>• Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</li>
-<li>• Implemented 10+ algorithms to verify compliance of 350,000 US Public Water Systems across 45+ pollutants, reducing manual review time by 75%</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Implemented multi-platform content dissemination pipelines (YouTube, WhatsApp) within a World Bank & NASA-backed randomized controlled trial</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Led LLM classification improvement from 65% → 87% accuracy via prompt engineering — built annotated datasets and iterative evaluation loops for systematic prompt adjustment</span></li>
 </ul>
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Science Research Assistant</h3>
@@ -98,14 +122,14 @@ to public health compliance and business intelligence.
 </div>
 <span className="text-sm text-zinc-600">Feb 2023 - June 2024</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>• Co-developed FastAPI web platform for behavioral research games studying children's decision-making</li>
-<li>• Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Co-developed FastAPI web platform for behavioral research games studying children's decision-making</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Created 10+ interactive visualizations with Plotly to detect bias in 250+ policing research papers</span></li>
 </ul>
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Engineering Fellow</h3>
@@ -113,14 +137,14 @@ to public health compliance and business intelligence.
 </div>
 <span className="text-sm text-zinc-600">June 2023 - Aug 2023</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>• Automated data collection & cleaning for six websites, reducing 10+ weekly hours of manual work</li>
-<li>• Built Python data platform for Long Beach Climate Office accessing 2010-2023 data</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Automated data collection & cleaning for six websites, reducing 10+ weekly hours of manual work</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built Python data platform for Long Beach Climate Office accessing 2010-2023 data</span></li>
 </ul>
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Senior Data Scientist</h3>
@@ -128,15 +152,16 @@ to public health compliance and business intelligence.
 </div>
 <span className="text-sm text-zinc-600">Oct 2021 - Oct 2023</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>• Led automatic alert system for 20+ clients to improve customer relationships via social media analytics</li>
-<li>• Built serverless architecture collecting data on 250,000+ commercial goods for strategic pricing</li>
-<li>• Developed ML recommender system offering customized loans to 500,000+ borrowers</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Led automatic alert system for 20+ clients to improve customer relationships via social media analytics</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Architected serverless AWS infrastructure to collect and process pricing data for 250,000+ commercial goods, enabling realtime strategic pricing</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built and deployed an end-to-end recommender system for 500,000+ borrowers: applied K-Means clustering, engineered custom borrower features, and designed similarity metrics to match borrowers with optimal loan products
+</span></li>
 </ul>
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Junior Data Scientist</h3>
@@ -144,10 +169,10 @@ to public health compliance and business intelligence.
 </div>
 <span className="text-sm text-zinc-600">June 2020 - Oct 2021</span>
 </div>
-<ul className="space-y-2 text-sm text-zinc-500">
-<li>• Extracted and parsed data from key Mexican governmental sources to support decision-making for 10+ clients</li>
-<li>• Implemented dynamic Power BI dashboard to monitor government projects and infrastructure, proactively flagging 50+ potential risks</li>
-<li>• Devised supervised ML models achieving top inflation forecaster status in Mexico with an RMSE of 2%</li>
+<ul className="space-y-2 text-sm text-zinc-500 list-none">
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Extracted and parsed data from key Mexican governmental sources to support decision-making for 10+ clients</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Implemented dynamic Power BI dashboard to monitor government projects and infrastructure, proactively flagging 50+ potential risks</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Built the company's inflation forecasting capability from scratch: developed XGBoost, Random Forest, linear regression models and an ensemble of all three — making the firm a top-ranked inflation forecaster</span></li>
 </ul>
 </div>
 </div>
@@ -155,7 +180,11 @@ to public health compliance and business intelligence.
 
 {/* Projects Section */}
 <section id="projects" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Highlighted Projects</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Selected Work</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Highlighted Projects</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
 {projects.map(p => <ProjectCard key={p.slug} project={p} />)}
 </div>
@@ -163,7 +192,11 @@ to public health compliance and business intelligence.
 
 {/* Skills Section */}
 <section id="skills" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Skills & Expertise</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Technical Stack</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Skills & Expertise</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="grid md:grid-cols-2 gap-6">
 <SkillCard
 title="Python"
@@ -201,12 +234,25 @@ icon={
 }
 skills={['AWS Lambda', 'EC2', 'Neptune', 'RDS', 'DynamoDB', 'S3', 'IAM', 'SQS', 'SNS', 'Route53', 'Databricks', 'Docker', 'serverless']}
 />
+<SkillCard
+title="LLMs & AI Agents"
+icon={
+    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+    </svg>
+  }
+skills={['Claude API', 'Prompt Engineering', 'Function Calling', 'Tool Use', 'AI Agents', 'Finetuning', 'HuggingFace', 'transformers', 'pytorch', 'Flan-T5']}
+/>
 </div>
 </section>
 
 {/* Education Section */}
 <section id="education" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Education</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Background</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Education</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="space-y-6 max-w-2xl">
 <div className="space-y-1">
 <h3 className="font-normal text-zinc-100">M.S. in Computational Analysis and Public Policy (MSCAPP)</h3>
@@ -223,7 +269,11 @@ skills={['AWS Lambda', 'EC2', 'Neptune', 'RDS', 'DynamoDB', 'S3', 'IAM', 'SQS', 
 
 {/* Publications Section */}
 <section id="publications" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Publications</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Research</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Publications</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="max-w-2xl">
 <a
 href="https://www.cambridge.org/core/journals/law-and-society-review/article/academic-copaganda/1D096FAF1C38403739FCBB8D482FE24A"
@@ -240,7 +290,11 @@ className="group block"
 
 {/* Featured Section */}
 <section id="featured" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Featured</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">In the Press</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Featured</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="max-w-2xl space-y-4">
 <a
 href="https://blog.codingitforward.com/meet-the-2023-fellows-federico-dominguez-molina-a1bf4f5df171"
@@ -267,7 +321,11 @@ className="block group"
 
 {/* Contact Section */}
 <section id="contact" className="space-y-8">
-<h2 className="text-2xl font-normal text-zinc-100">Contact</h2>
+<div className="space-y-3">
+  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Get in Touch</p>
+  <h2 className="text-2xl font-normal text-zinc-100">Contact</h2>
+  <div className="w-11 h-px bg-secondary" />
+</div>
 <div className="max-w-2xl space-y-6">
 <p className="text-zinc-400 leading-relaxed">
 I'm always interested in discussing data science challenges, social impact projects,
