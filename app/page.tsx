@@ -63,7 +63,7 @@ Data Scientist & Engineer building <span className="text-zinc-100">agentic pipel
     <h2 className="text-2xl font-normal text-zinc-100">About</h2>
     <div className="w-11 h-px bg-secondary" />
   </div>
-  <div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 max-w-3xl space-y-6">
+  <div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 space-y-6">
     <p className="text-base text-zinc-300 leading-relaxed">
       I'm a Data Scientist and Engineer passionate about drawing insights from structured
       and unstructured data—whether to improve outcomes for underrepresented communities
