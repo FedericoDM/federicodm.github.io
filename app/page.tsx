@@ -52,7 +52,7 @@ Resume
 </a>
 </div>
 <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-Data Scientist & Engineer building <span className="text-zinc-100">agentic pipelines, LLM systems & automation</span>
+Data Scientist & Engineer building <span className="text-zinc-100">agentic pipelines, LLM systems & process automation</span>
 </p>
 </section>
 
