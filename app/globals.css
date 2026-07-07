@@ -21,6 +21,23 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Anchor targets clear the sticky header */
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.35);
+    color: #fafafa;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }
 
 @layer components {
@@ -44,5 +61,24 @@
 
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-zinc-700;
+  }
+
+  /* Scroll-reveal (see components/Reveal.tsx) */
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
