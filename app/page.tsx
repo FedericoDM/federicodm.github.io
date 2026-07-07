@@ -17,7 +17,7 @@ return (
     className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover object-top flex-shrink-0 ring-1 ring-zinc-700"
   />
   <div className="space-y-3">
-    <h1 className="text-4xl md:text-5xl font-medium tracking-tight bg-gradient-to-r from-zinc-100 via-blue-300 to-violet-400 bg-clip-text text-transparent">
+    <h1 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.2] pb-1 bg-gradient-to-r from-zinc-100 via-blue-300 to-violet-400 bg-clip-text text-transparent">
       Federico Dominguez Molina
     </h1>
     <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl leading-relaxed">
