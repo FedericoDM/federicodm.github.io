@@ -6,7 +6,7 @@ type SkillCardProps = {
 
 export function SkillCard({ title, icon, skills }: SkillCardProps) {
   return (
-    <div className="group p-6 rounded-lg border border-zinc-800 hover:border-secondary transition-colors bg-zinc-900/50">
+    <div className="group p-6 rounded-lg border border-zinc-800 hover:border-secondary bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
       <div className="flex items-center gap-3 mb-4">
         <div className="text-secondary group-hover:text-secondary-light transition-colors">
           {icon}
