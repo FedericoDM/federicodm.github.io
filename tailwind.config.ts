@@ -27,8 +27,8 @@ light: '#171717'    // zinc-900
 }
 },
 fontFamily: {
-sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-mono: ['SF Mono', 'Consolas', 'Monaco', 'monospace']
+sans: ['var(--font-sans)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+mono: ['var(--font-mono)', 'SF Mono', 'Consolas', 'Monaco', 'monospace']
 }
 }
 },
