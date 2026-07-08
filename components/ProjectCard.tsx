@@ -1,6 +1,24 @@
 import Link from 'next/link';
 import type { Project } from '@/content/projects-data';
 
+// Deterministic gradient per project so imageless cards look intentional
+function slugGradient(slug: string): React.CSSProperties {
+  let hash = 0;
+  for (const char of slug) hash = (hash * 31 + char.charCodeAt(0)) % 360;
+  return {
+    background: `linear-gradient(135deg, hsl(${hash}, 35%, 14%) 0%, hsl(${(hash + 45) % 360}, 40%, 22%) 100%)`,
+  };
+}
+
+function initials(title: string): string {
+  return title
+    .split(' ')
+    .filter((word) => /^[A-Z]/.test(word))
+    .slice(0, 3)
+    .map((word) => word[0])
+    .join('');
+}
+
 export function ProjectCard({ project }: { project: Project }) {
   const href = project.link || project.github;
   const isExternal = !!href;
@@ -8,7 +26,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const content = (
     <>
       {/* Project Image */}
-      <div className="relative w-full aspect-video mb-4 bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800">
+      <div className="relative w-full aspect-video mb-4 bg-zinc-900 rounded-lg overflow-hidden">
         {project.image ? (
           <img
             src={project.image}
@@ -16,20 +34,13 @@ export function ProjectCard({ project }: { project: Project }) {
             className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <svg
-              className="w-16 h-16 text-zinc-700"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
+          <div
+            className="w-full h-full flex items-center justify-center"
+            style={slugGradient(project.slug)}
+          >
+            <span className="font-mono text-2xl tracking-widest text-zinc-500">
+              {initials(project.title)}
+            </span>
           </div>
         )}
       </div>
@@ -75,18 +86,21 @@ export function ProjectCard({ project }: { project: Project }) {
     </>
   );
 
+  const cardClasses =
+    'group block h-full p-4 rounded-lg border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-600 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] motion-reduce:transition-none motion-reduce:hover:translate-y-0';
+
   if (isExternal) {
     return (
       <Link
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block"
+        className={cardClasses}
       >
         {content}
       </Link>
     );
   }
 
-  return <div className="group">{content}</div>;
+  return <div className={cardClasses}>{content}</div>;
 }

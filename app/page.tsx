@@ -1,22 +1,29 @@
 import { projects } from '@/content/projects-data';
 import { ProjectCard } from '@/components/ProjectCard';
 import { SkillCard } from '@/components/SkillCard';
+import { SectionHeading } from '@/components/SectionHeading';
+import { Reveal } from '@/components/Reveal';
 
 
 export default function HomePage() {
 return (
 <div className="space-y-24">
 {/* Hero Section */}
-<section id="home" className="space-y-6">
-<div className="flex items-center gap-6">
+<section id="home" className="space-y-8">
+<div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
   <img
     src="/FedericoDominguezMolina_Headshot.jpg"
     alt="Federico Dominguez Molina"
-    className="w-20 h-20 rounded-full object-cover object-top flex-shrink-0 ring-1 ring-zinc-700"
+    className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover object-top flex-shrink-0 ring-1 ring-zinc-700"
   />
-  <h1 className="text-3xl md:text-4xl font-normal text-zinc-100">
-    Federico Dominguez Molina
-  </h1>
+  <div className="space-y-3">
+    <h1 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.2] pb-1 bg-gradient-to-r from-zinc-100 via-blue-300 to-violet-400 bg-clip-text text-transparent">
+      Federico Dominguez Molina
+    </h1>
+    <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl leading-relaxed">
+      Data Scientist & Engineer building <span className="text-zinc-100">AI agents</span>, <span className="text-zinc-100">LLM systems</span>, and <span className="text-zinc-100">end-to-end data pipelines</span>
+    </p>
+  </div>
 </div>
 <div className="flex flex-wrap gap-3">
 <a
@@ -50,18 +57,12 @@ className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-
 Resume
 </a>
 </div>
-<p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-Data Scientist & Engineer building <span className="text-zinc-100">AI agents</span>, <span className="text-zinc-100">LLM systems</span>, and <span className="text-zinc-100">end-to-end data pipelines</span>
-</p>
 </section>
 
 {/* About Section */}
+<Reveal>
 <section id="about" className="space-y-8">
-  <div className="space-y-3">
-    <p className="text-xs font-mono uppercase tracking-widest text-secondary">About Me</p>
-    <h2 className="text-2xl font-normal text-zinc-100">About</h2>
-    <div className="w-11 h-px bg-secondary" />
-  </div>
+  <SectionHeading index="01" eyebrow="Introduction" title="About" />
   <div className="p-8 rounded-lg border border-zinc-800 bg-zinc-900/50 space-y-6">
     <p className="text-base text-zinc-300 leading-relaxed">
       I&apos;m a Data Scientist and Engineer passionate about drawing insights from structured
@@ -83,20 +84,18 @@ Data Scientist & Engineer building <span className="text-zinc-100">AI agents</sp
     </p>
   </div>
 </section>
+</Reveal>
 
 {/* Experience Section */}
+<Reveal>
 <section id="experience" className="space-y-8">
-<div className="space-y-3">
-  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Work History</p>
-  <h2 className="text-2xl font-normal text-zinc-100">Experience</h2>
-  <div className="w-11 h-px bg-secondary" />
-</div>
+<SectionHeading index="02" eyebrow="Work History" title="Experience" />
 <div className="relative space-y-8">
 {/* Timeline line */}
 <div className="absolute left-0 top-2 bottom-2 w-px bg-zinc-800 hidden sm:block" />
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block" style={{marginLeft: '-4.5px', boxShadow: '0 0 8px rgba(59,130,246,0.6)'}} />
+<div className="absolute left-0 top-2 w-2 h-2 -ml-[4.5px] rounded-full bg-secondary shadow-[0_0_8px_rgba(59,130,246,0.6)] hidden sm:block" />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Scientist</h3>
@@ -113,7 +112,7 @@ Data Scientist & Engineer building <span className="text-zinc-100">AI agents</sp
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 -ml-[4.5px] rounded-full bg-zinc-800 border border-secondary hidden sm:block" />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Science Research Assistant</h3>
@@ -128,7 +127,7 @@ Data Scientist & Engineer building <span className="text-zinc-100">AI agents</sp
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 -ml-[4.5px] rounded-full bg-zinc-800 border border-secondary hidden sm:block" />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Data Engineering Fellow</h3>
@@ -143,7 +142,7 @@ Data Scientist & Engineer building <span className="text-zinc-100">AI agents</sp
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 -ml-[4.5px] rounded-full bg-zinc-800 border border-secondary hidden sm:block" />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Senior Data Scientist</h3>
@@ -160,7 +159,7 @@ Data Scientist & Engineer building <span className="text-zinc-100">AI agents</sp
 </div>
 
 <div className="relative space-y-3 sm:pl-8">
-<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-zinc-800 border border-secondary hidden sm:block" style={{marginLeft: '-4.5px'}} />
+<div className="absolute left-0 top-2 w-2 h-2 -ml-[4.5px] rounded-full bg-zinc-800 border border-secondary hidden sm:block" />
 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
 <div>
 <h3 className="font-normal text-zinc-100">Junior Data Scientist</h3>
@@ -176,26 +175,22 @@ Data Scientist & Engineer building <span className="text-zinc-100">AI agents</sp
 </div>
 </div>
 </section>
+</Reveal>
 
 {/* Projects Section */}
+<Reveal>
 <section id="projects" className="space-y-8">
-<div className="space-y-3">
-  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Selected Work</p>
-  <h2 className="text-2xl font-normal text-zinc-100">Highlighted Projects</h2>
-  <div className="w-11 h-px bg-secondary" />
-</div>
-<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+<SectionHeading index="03" eyebrow="Selected Work" title="Projects" />
+<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 {projects.map(p => <ProjectCard key={p.slug} project={p} />)}
 </div>
 </section>
+</Reveal>
 
 {/* Skills Section */}
+<Reveal>
 <section id="skills" className="space-y-8">
-<div className="space-y-3">
-  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Technical Stack</p>
-  <h2 className="text-2xl font-normal text-zinc-100">Skills & Expertise</h2>
-  <div className="w-11 h-px bg-secondary" />
-</div>
+<SectionHeading index="04" eyebrow="Technical Stack" title="Skills & Expertise" />
 <div className="grid md:grid-cols-2 gap-6">
 <SkillCard
 title="Python"
@@ -244,14 +239,12 @@ skills={['Claude API', 'Prompt Engineering', 'Function Calling', 'Tool Use', 'AI
 />
 </div>
 </section>
+</Reveal>
 
 {/* Education Section */}
+<Reveal>
 <section id="education" className="space-y-8">
-<div className="space-y-3">
-  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Background</p>
-  <h2 className="text-2xl font-normal text-zinc-100">Education</h2>
-  <div className="w-11 h-px bg-secondary" />
-</div>
+<SectionHeading index="05" eyebrow="Background" title="Education" />
 <div className="space-y-6 max-w-2xl">
 <div className="space-y-1">
 <h3 className="font-normal text-zinc-100">M.S. in Computational Analysis and Public Policy (MSCAPP)</h3>
@@ -265,14 +258,12 @@ skills={['Claude API', 'Prompt Engineering', 'Function Calling', 'Tool Use', 'AI
 </div>
 </div>
 </section>
+</Reveal>
 
 {/* Publications Section */}
+<Reveal>
 <section id="publications" className="space-y-8">
-<div className="space-y-3">
-  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Research</p>
-  <h2 className="text-2xl font-normal text-zinc-100">Publications</h2>
-  <div className="w-11 h-px bg-secondary" />
-</div>
+<SectionHeading index="06" eyebrow="Research" title="Publications" />
 <div className="max-w-2xl">
 <a
 href="https://www.cambridge.org/core/journals/law-and-society-review/article/academic-copaganda/1D096FAF1C38403739FCBB8D482FE24A"
@@ -286,14 +277,12 @@ className="group block"
 </a>
 </div>
 </section>
+</Reveal>
 
 {/* Featured Section */}
+<Reveal>
 <section id="featured" className="space-y-8">
-<div className="space-y-3">
-  <p className="text-xs font-mono uppercase tracking-widest text-secondary">In the Press</p>
-  <h2 className="text-2xl font-normal text-zinc-100">Featured</h2>
-  <div className="w-11 h-px bg-secondary" />
-</div>
+<SectionHeading index="07" eyebrow="In the Press" title="Featured" />
 <div className="max-w-2xl space-y-4">
 <a
 href="https://blog.codingitforward.com/meet-the-2023-fellows-federico-dominguez-molina-a1bf4f5df171"
@@ -317,14 +306,12 @@ className="block group"
 </a>
 </div>
 </section>
+</Reveal>
 
 {/* Contact Section */}
+<Reveal>
 <section id="contact" className="space-y-8">
-<div className="space-y-3">
-  <p className="text-xs font-mono uppercase tracking-widest text-secondary">Get in Touch</p>
-  <h2 className="text-2xl font-normal text-zinc-100">Contact</h2>
-  <div className="w-11 h-px bg-secondary" />
-</div>
+<SectionHeading index="08" eyebrow="Get in Touch" title="Contact" />
 <div className="max-w-2xl space-y-6">
 <p className="text-zinc-400 leading-relaxed">
 I&apos;m always interested in discussing data science challenges, social impact projects,
@@ -364,6 +351,7 @@ Download Resume
 </div>
 </div>
 </section>
+</Reveal>
 </div>
 );
 }
