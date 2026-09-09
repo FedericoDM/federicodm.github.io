@@ -10,12 +10,8 @@ export default function HomePage() {
 return (
 <div className="space-y-24">
 {/* Hero Section */}
-<section
-id="home"
-className="relative isolate flex min-h-[28rem] md:min-h-[32rem] flex-col justify-center"
->
-<NeuralNetwork />
-<div className="relative z-10 space-y-8">
+<section id="home" className="space-y-10">
+<div className="space-y-8">
 <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
   <img
     src="/FedericoDominguezMolina_Headshot.jpg"
@@ -67,6 +63,7 @@ Resume
 </a>
 </div>
 </div>
+<NeuralNetwork />
 </section>
 
 {/* About Section */}

@@ -20,6 +20,9 @@ const ACTIVATION_DECAY = 0.14;
 const POINTER_RADIUS = 110;
 /** Seconds of simulation run before the first paint, so the hero opens mid-pass. */
 const WARM_START = 1.4;
+/** Where the graph sits in its panel, as fractions of the canvas box. The
+ *  column labels are placed from these same numbers so the two can't drift. */
+const FIELD = { left: 0.09, right: 0.91, top: 0.14, bottom: 0.74 };
 
 /** Positive weights read blue, negative violet — the hero gradient's two ends. */
 const POSITIVE = [96, 165, 250] as const;
@@ -75,7 +78,7 @@ function buildNetwork(rand: () => number) {
       const baseY = count === 1 ? 0.5 : i / (count - 1);
       const node: Node = {
         nx: baseX + (rand() - 0.5) * 0.012,
-        ny: baseY + (rand() - 0.5) * 0.06,
+        ny: baseY + (rand() - 0.5) * 0.025,
         layer: layerIndex,
         activation: 0,
         x: 0,
@@ -165,21 +168,10 @@ export function NeuralNetwork() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    /**
-     * Maps the graph into a band of the hero. On desktop it sits in the right
-     * half, clear of the copy, so the 5→8→8→4 architecture stays readable; on
-     * narrow screens it spreads wider and higher, behind the stacked text.
-     */
     const project = () => {
-      const wide = width >= 768;
-      const left = wide ? 0.48 : 0.24;
-      const right = wide ? 0.99 : 1.02;
-      const top = wide ? 0.14 : 0.02;
-      const bottom = wide ? 0.86 : 0.45;
-
       for (const node of nodes) {
-        node.x = (left + node.nx * (right - left)) * width;
-        node.y = (top + node.ny * (bottom - top)) * height;
+        node.x = (FIELD.left + node.nx * (FIELD.right - FIELD.left)) * width;
+        node.y = (FIELD.top + node.ny * (FIELD.bottom - FIELD.top)) * height;
       }
     };
 
@@ -266,7 +258,7 @@ export function NeuralNetwork() {
         const glow = Math.max(edge.from.activation, edge.to.activation);
         const color = edge.weight >= 0 ? POSITIVE : NEGATIVE;
 
-        ctx.strokeStyle = rgba(color, 0.06 + magnitude * 0.19 + glow * 0.5);
+        ctx.strokeStyle = rgba(color, 0.08 + magnitude * 0.24 + glow * 0.6);
         ctx.lineWidth = 0.6 + magnitude * 0.6 + glow * 1;
         ctx.beginPath();
         ctx.moveTo(edge.from.x, edge.from.y);
@@ -413,34 +405,42 @@ export function NeuralNetwork() {
     };
   }, []);
 
+  const label = 'absolute bottom-3 -translate-x-1/2 whitespace-nowrap';
+
   return (
-    <>
+    <figure className="overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/50">
       <div
         ref={wrapRef}
         aria-hidden="true"
-        className="network-mask pointer-events-none absolute inset-0 overflow-hidden"
+        className="relative h-72 w-full font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:h-80"
       >
-        <canvas ref={canvasRef} className="h-full w-full" />
+        <canvas className="h-full w-full" ref={canvasRef} />
+        <span className={label} style={{ left: `${FIELD.left * 100}%` }}>
+          input
+        </span>
+        <span className={label} style={{ left: `${((FIELD.left + FIELD.right) / 2) * 100}%` }}>
+          hidden
+        </span>
+        <span className={label} style={{ left: `${FIELD.right * 100}%` }}>
+          output
+        </span>
       </div>
 
-      <p
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 right-0 hidden items-center gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-700 md:flex"
-      >
-        <span>{LAYERS.join(' → ')}</span>
-        <span className="text-zinc-800">·</span>
-        <span ref={statusRef} className="text-zinc-600">
+      <figcaption className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-zinc-800 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600">
+        <span className="text-zinc-400">{LAYERS.join(' → ')}</span>
+        <span className="text-zinc-700">·</span>
+        <span ref={statusRef} className="text-secondary">
           idle
         </span>
-        <span className="text-zinc-800">·</span>
+        <span className="text-zinc-700">·</span>
         <span>
-          epoch <span ref={epochRef}>01</span>
+          epoch <span ref={epochRef} className="text-zinc-400">01</span>
         </span>
-        <span className="text-zinc-800">·</span>
+        <span className="text-zinc-700">·</span>
         <span>
-          drift <span ref={lossRef}>0.000</span>
+          drift <span ref={lossRef} className="text-zinc-400">0.000</span>
         </span>
-      </p>
-    </>
+      </figcaption>
+    </figure>
   );
 }
