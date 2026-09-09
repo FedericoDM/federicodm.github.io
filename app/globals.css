@@ -63,6 +63,23 @@
     @apply bg-zinc-700;
   }
 
+  /* Fades the hero network at its edges (see components/NeuralNetwork.tsx).
+     Narrow screens sit it high and wide behind the stacked copy; from md up it
+     tucks into the right half, clear of the text. */
+  .network-mask {
+    opacity: 0.5;
+    -webkit-mask-image: radial-gradient(115% 80% at 62% 22%, #000 0%, #000 38%, rgba(0, 0, 0, 0.28) 68%, transparent 90%);
+    mask-image: radial-gradient(115% 80% at 62% 22%, #000 0%, #000 38%, rgba(0, 0, 0, 0.28) 68%, transparent 90%);
+  }
+
+  @media (min-width: 768px) {
+    .network-mask {
+      opacity: 1;
+      -webkit-mask-image: radial-gradient(72% 115% at 74% 50%, #000 0%, #000 62%, transparent 100%);
+      mask-image: radial-gradient(72% 115% at 74% 50%, #000 0%, #000 62%, transparent 100%);
+    }
+  }
+
   /* Scroll-reveal (see components/Reveal.tsx) */
   .reveal {
     opacity: 1;

@@ -3,13 +3,19 @@ import { ProjectCard } from '@/components/ProjectCard';
 import { SkillCard } from '@/components/SkillCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Reveal } from '@/components/Reveal';
+import { NeuralNetwork } from '@/components/NeuralNetwork';
 
 
 export default function HomePage() {
 return (
 <div className="space-y-24">
 {/* Hero Section */}
-<section id="home" className="space-y-8">
+<section
+id="home"
+className="relative isolate flex min-h-[28rem] md:min-h-[32rem] flex-col justify-center"
+>
+<NeuralNetwork />
+<div className="relative z-10 space-y-8">
 <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
   <img
     src="/FedericoDominguezMolina_Headshot.jpg"
@@ -20,11 +26,14 @@ return (
     <h1 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.2] pb-1 bg-gradient-to-r from-zinc-100 via-blue-300 to-violet-400 bg-clip-text text-transparent">
       Federico Dominguez Molina
     </h1>
-    <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl leading-relaxed">
-      Data Scientist & Engineer building <span className="text-zinc-100">AI agents</span>, <span className="text-zinc-100">LLM systems</span>, and <span className="text-zinc-100">end-to-end data pipelines</span>
+    <p className="text-2xl md:text-3xl font-normal tracking-tight text-zinc-200">
+      Data into decisions.
     </p>
   </div>
 </div>
+<p className="text-base md:text-lg text-zinc-400 max-w-2xl leading-relaxed">
+  Data Scientist & Engineer building <span className="text-zinc-100">AI agents</span>, <span className="text-zinc-100">LLM systems</span>, and <span className="text-zinc-100">end-to-end data pipelines</span>
+</p>
 <div className="flex flex-wrap gap-3">
 <a
 href="mailto:fd.molina@outlook.com"
@@ -56,6 +65,7 @@ className="px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-zinc-
 >
 Resume
 </a>
+</div>
 </div>
 </section>
 
