@@ -1,0 +1,92 @@
+---
+title: Prompt engineering without an eval loop is just guessing
+description: How a classification task went from 65% to 87% — and why almost none of it came from writing a cleverer prompt.
+date: 2026-09-09
+tags: ['LLMs', 'Evaluation', 'Prompt Engineering']
+draft: true
+---
+
+{/*
+  ─────────────────────────────────────────────────────────────────────────────
+  SCAFFOLD — not a finished post. Structure only; the substance is yours to add.
+
+  Everything below is headings plus bracketed prompts inside MDX comments like
+  this one, which never render. Write your prose under each heading, delete the
+  prompt block as you go, and set `draft: false` in the frontmatter when you're
+  happy with it. Then uncomment the Blog link in components/NavLinks.tsx.
+
+  WHAT IS ALREADY TRUE (verified from your own experience bullet — safe to state):
+    · The classification task moved from 65% to 87% accuracy
+    · You built annotated datasets
+    · You ran iterative evaluation loops for systematic prompt adjustment
+    · This was at the Energy & Environment Lab, inside the World Bank / NASA RCT
+
+  EVERYTHING ELSE NEEDS TO COME FROM YOU. The earlier draft invented plausible
+  lessons and put them in your voice — which is exactly what makes a post
+  indefensible when someone asks you a follow-up question about it.
+
+  The title is a working title. If the post you actually write argues something
+  different, change it. Let the argument decide the headline, not the reverse.
+  ─────────────────────────────────────────────────────────────────────────────
+*/}
+
+{/*
+  OPENING — the naive loop, and why it fails.
+
+  · Describe how you (or the team) were adjusting prompts before there was a
+    way to score them. Be concrete about the actual workflow.
+  · What made you realize it wasn't working? Was there a specific moment — a
+    change that felt better but wasn't, or a regression nobody caught?
+  · State the 65% → 87% up front. It earns the reader's attention.
+*/}
+
+## The task
+
+{/*
+  · What was being classified? Domain, input type, and the classes themselves.
+  · Why did accuracy matter here — what did a misclassification actually cost
+    downstream in the RCT?
+  · What did the 65% failures look like? Which classes got confused with which?
+    This is the most interesting paragraph in the post and only you have it.
+*/}
+
+## Building something to measure against
+
+{/*
+  · How large was the annotated set, and how did you decide what went into it?
+  · Who annotated? Just you, or several people? If several — how much did you
+    disagree, and what did you do about it?
+  · How long did this take relative to the prompt work itself?
+  · What did you get wrong on the first attempt at the eval set?
+*/}
+
+## What actually moved the number
+
+{/*
+  This is the heart of the post. Be specific and be honest about the ordering.
+
+  · What single change produced the biggest jump?
+  · Was it prompt wording at all — or class definitions, few-shot examples,
+    input preprocessing, chunking, model choice?
+  · What did you try that did nothing? What made it worse?
+  · Did any change help one class while quietly breaking another? How did you
+    catch it?
+*/}
+
+## Where it stopped
+
+{/*
+  · Why 87% and not higher? What was the remaining error made of?
+  · How did you decide it was good enough to ship?
+  · Was there an irreducible chunk — genuine ambiguity, or label noise in your
+    own eval set?
+*/}
+
+## What I'd do differently
+
+{/*
+  · With the benefit of hindsight, what would you build first next time?
+  · What advice would you give someone starting the same task tomorrow?
+  · Keep this short. One or two honest observations beat a list of best
+    practices anyone could have written.
+*/}

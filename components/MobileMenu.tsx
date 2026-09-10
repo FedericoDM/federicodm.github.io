@@ -1,6 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
+import { navLinks } from './NavLinks';
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +12,7 @@ export function MobileMenu() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 text-zinc-100"
+        aria-expanded={isOpen}
         aria-label="Toggle menu"
       >
         {isOpen ? (
@@ -26,34 +29,16 @@ export function MobileMenu() {
       {isOpen && (
         <div className="absolute top-full left-0 right-0 bg-[#0a0a0a] border-b border-zinc-800">
           <nav className="flex flex-col p-6 space-y-4">
-            <a
-              href="#about"
-              onClick={() => setIsOpen(false)}
-              className="text-zinc-400 hover:text-zinc-100 transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="#experience"
-              onClick={() => setIsOpen(false)}
-              className="text-zinc-400 hover:text-zinc-100 transition-colors"
-            >
-              Experience
-            </a>
-            <a
-              href="#projects"
-              onClick={() => setIsOpen(false)}
-              className="text-zinc-400 hover:text-zinc-100 transition-colors"
-            >
-              Projects
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="text-zinc-400 hover:text-zinc-100 transition-colors"
-            >
-              Contact
-            </a>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-zinc-400 hover:text-zinc-100 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
         </div>
       )}
