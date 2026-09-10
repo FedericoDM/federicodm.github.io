@@ -2,8 +2,19 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProject, projects } from '@/content/projects-data';
+import { GraphReachViz } from '@/components/viz/GraphReachViz';
+import { KMeansViz } from '@/components/viz/KMeansViz';
 
 type Params = { params: { slug: string } };
+
+/**
+ * Only projects whose method is worth drawing get a figure. The rest render
+ * without one rather than with a generic stand-in.
+ */
+const FIGURES: Record<string, () => JSX.Element> = {
+  'ml-loan-recommender': KMeansViz,
+  'air-pollution-alert-system': GraphReachViz,
+};
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -71,6 +82,7 @@ export default function ProjectPage({ params }: Params) {
   const index = projects.findIndex((entry) => entry.slug === project.slug);
   const previous = projects[index - 1];
   const next = projects[index + 1];
+  const Figure = FIGURES[project.slug];
 
   return (
     <article className="space-y-12">
@@ -104,6 +116,8 @@ export default function ProjectPage({ params }: Params) {
 
       <div className="max-w-2xl space-y-10">
         <p className="text-lg leading-relaxed text-zinc-300">{project.description}</p>
+
+        {Figure && <Figure />}
 
         {project.context && (
           <Section title="Context">
