@@ -33,7 +33,6 @@ export const projects: Project[] = [
     approach: [
       'Identified and ranked air pollution advocates across 30+ cities using NLP and graph analysis over X (Twitter) networks',
       'Ingested real-time satellite pollution readings and joined them against city-level advocate audiences',
-      'Built multi-platform dissemination pipelines so alerts reached advocates on YouTube and WhatsApp, not just one channel',
       'Raised LLM classification accuracy from 65% to 87% through prompt engineering — building annotated datasets and iterative evaluation loops rather than one-shot prompt guesses',
     ],
     outcome: [
