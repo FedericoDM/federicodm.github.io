@@ -7,9 +7,9 @@ import { useEffect, useRef } from 'react';
  *  as an architecture. */
 const LAYERS = [4, 6, 6, 3];
 /** Seconds between forward passes. */
-const PASS_INTERVAL = 2.9;
+const PASS_INTERVAL = 3;
 /** Seconds a pulse takes to cross one edge. */
-const PULSE_TRAVEL = 0.6;
+const PULSE_TRAVEL = 0.75;
 /** Fraction of possible layer-to-layer connections actually drawn. */
 const EDGE_DENSITY = 0.5;
 /** Fraction of a layer's edges carrying a pulse on any given pass — sparse reads better than solid. */
