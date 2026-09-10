@@ -2,8 +2,10 @@
 
 import { useEffect, useRef } from 'react';
 
-/** Layer widths, input → output. */
-const LAYERS = [5, 8, 8, 4];
+/** Layer widths, input → output. Kept small: the panel sits in a narrow hero
+ *  column, and 8-node layers there collapse into a mesh instead of reading
+ *  as an architecture. */
+const LAYERS = [4, 6, 6, 3];
 /** Seconds between forward passes. */
 const PASS_INTERVAL = 1.9;
 /** Seconds a pulse takes to cross one edge. */
@@ -22,7 +24,7 @@ const POINTER_RADIUS = 110;
 const WARM_START = 1.4;
 /** Where the graph sits in its panel, as fractions of the canvas box. The
  *  column labels are placed from these same numbers so the two can't drift. */
-const FIELD = { left: 0.09, right: 0.91, top: 0.14, bottom: 0.74 };
+const FIELD = { left: 0.12, right: 0.88, top: 0.10, bottom: 0.82 };
 
 /** Positive weights read blue, negative violet — the hero gradient's two ends. */
 const POSITIVE = [96, 165, 250] as const;
@@ -103,7 +105,7 @@ function buildNetwork(rand: () => number) {
         // A sparse graph reads as an architecture; all-to-all reads as a mesh.
         // Biasing against long diagonals keeps the layer columns legible.
         const reach = Math.abs(from.ny - to.ny);
-        if (rand() > EDGE_DENSITY * (1 - reach * 0.75)) continue;
+        if (rand() > EDGE_DENSITY * (1 - reach * 0.85)) continue;
         connect(from, to);
       }
     }
@@ -405,41 +407,53 @@ export function NeuralNetwork() {
     };
   }, []);
 
-  const label = 'absolute bottom-3 -translate-x-1/2 whitespace-nowrap';
+  // Sat just under the field rather than at the panel's bottom edge, so no dead
+  // band opens up between the last row of nodes and its own label.
+  const label = 'absolute -translate-x-1/2 whitespace-nowrap';
+  const labelTop = `calc(${FIELD.bottom * 100}% + 0.6rem)`;
 
   return (
-    <figure className="overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/50">
+    // No panel chrome: sitting in its own hero column, the graph is already
+    // separated from the copy, so a border would just box in empty space.
+    <figure className="w-full">
       <div
         ref={wrapRef}
         aria-hidden="true"
-        className="relative h-72 w-full font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:h-80"
+        className="relative h-56 w-full font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:h-60 lg:h-[15rem]"
       >
         <canvas className="h-full w-full" ref={canvasRef} />
-        <span className={label} style={{ left: `${FIELD.left * 100}%` }}>
+        <span className={label} style={{ top: labelTop, left: `${FIELD.left * 100}%` }}>
           input
         </span>
-        <span className={label} style={{ left: `${((FIELD.left + FIELD.right) / 2) * 100}%` }}>
+        <span
+          className={label}
+          style={{ top: labelTop, left: `${((FIELD.left + FIELD.right) / 2) * 100}%` }}
+        >
           hidden
         </span>
-        <span className={label} style={{ left: `${FIELD.right * 100}%` }}>
+        <span className={label} style={{ top: labelTop, left: `${FIELD.right * 100}%` }}>
           output
         </span>
       </div>
 
-      <figcaption className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-zinc-800 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600">
-        <span className="text-zinc-400">{LAYERS.join(' → ')}</span>
-        <span className="text-zinc-700">·</span>
-        <span ref={statusRef} className="text-secondary">
-          idle
-        </span>
-        <span className="text-zinc-700">·</span>
-        <span>
-          epoch <span ref={epochRef} className="text-zinc-400">01</span>
-        </span>
-        <span className="text-zinc-700">·</span>
-        <span>
-          drift <span ref={lossRef} className="text-zinc-400">0.000</span>
-        </span>
+      {/* Two deliberate rows: the architecture is fixed, the row below it is live.
+          Splitting them also stops the readout wrapping mid-list in a narrow column. */}
+      <figcaption className="mt-4 space-y-1.5 border-t border-zinc-800/70 pt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600">
+        <div className="flex items-center justify-between gap-3">
+          <span className="text-zinc-400">{LAYERS.join(' → ')}</span>
+          <span ref={statusRef} className="text-secondary">
+            idle
+          </span>
+        </div>
+        <div className="flex items-center gap-3">
+          <span>
+            epoch <span ref={epochRef} className="text-zinc-400">01</span>
+          </span>
+          <span className="text-zinc-700">·</span>
+          <span>
+            drift <span ref={lossRef} className="text-zinc-400">0.000</span>
+          </span>
+        </div>
       </figcaption>
     </figure>
   );

@@ -11,7 +11,8 @@ export default function HomePage() {
 return (
 <div className="space-y-24">
 {/* Hero Section */}
-<section id="home" className="space-y-10">
+{/* Copy leads; the network sits alongside it on wide screens and stacks below on narrow ones. */}
+<section id="home" className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-12">
 <div className="space-y-8">
 <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
   <img

@@ -102,13 +102,6 @@ export default function ProjectPage({ params }: Params) {
         )}
       </div>
 
-      {project.image && (
-        <div className="aspect-video w-full max-w-3xl overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900">
-          {/* Decorative: the case study below carries the actual content */}
-          <img src={project.image} alt="" className="h-full w-full object-cover" />
-        </div>
-      )}
-
       <div className="max-w-2xl space-y-10">
         <p className="text-lg leading-relaxed text-zinc-300">{project.description}</p>
 
