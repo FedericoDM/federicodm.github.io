@@ -52,7 +52,7 @@ export const projects: Project[] = [
     featured: true,
     org: 'Personal project',
     context:
-      'Portfolio review is a research task before it is a trading task: read the current macro regime, check how the holdings are positioned against it, then decide what to change. That shape — gather evidence, reason over it, propose an action — is what an agent with tools is actually good at.',
+      'Portfolio review is a research task before it is a trading task: read the current macro regime, check how the holdings are positioned against it, then decide what to change. Gathering evidence, reasoning over it and proposing an action is what an agent with tools is actually good at, especially at scale.',
     approach: [
       'Built custom tools the model calls to pull portfolio holdings and macroeconomic indicators',
       'Used Claude with function calling to reason over regime classification and current exposure together',
@@ -134,10 +134,11 @@ export const projects: Project[] = [
     org: 'University of Chicago',
     period: '2023 — 2024',
     context:
-      'Claims about policing carry more weight when they come from peer-reviewed research — which makes systematic bias in that literature consequential. Detecting it requires reading the corpus as a dataset rather than as individual papers.',
+      'Claims about policing carry more weight when they come from peer-reviewed research, which makes systematic bias in that literature consequential. Detecting it requires reading the corpus as a dataset rather than as individual papers.',
     approach: [
-      'Analyzed a corpus of 250+ policing research papers for patterns of bias',
+      'Scraped hundreds of media mentions for 250+ policing research papers to detect patterns of bias',
       'Built 10+ interactive Plotly visualizations and dashboards to make those patterns inspectable',
+
     ],
     outcome: [
       'Supported "Academic Copaganda" with Dr. Robert Vargas, published in Law and Society Review',
@@ -172,7 +173,7 @@ export const projects: Project[] = [
     org: 'University of Chicago',
     period: '2023 — 2024',
     context:
-      'Behavioral research on how children make decisions depends on running controlled games consistently across every participant — which is hard to do with paper instruments and a room full of kids.',
+      'Behavioral research on how children make decisions depends on running controlled games consistently across every participant, which is hard to do with paper instruments and a room full of kids.',
     approach: [
       'Co-developed a FastAPI web platform to administer the laboratory games',
       'Captured play data in a form researchers could analyze directly',

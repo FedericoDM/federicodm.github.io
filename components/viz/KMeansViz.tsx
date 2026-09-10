@@ -5,7 +5,7 @@ import { CLUSTER_COLORS, mulberry32, rgba } from './random';
 import { useCanvasScene, type Scene } from './useCanvasScene';
 import { VizFigure } from './VizFigure';
 
-const K = 5;
+const K = 3;
 const POINT_COUNT = 150;
 /** Seconds between Lloyd iterations — slow enough to watch a step land. */
 const STEP_INTERVAL = 0.95;
