@@ -1,4 +1,5 @@
-import { projects } from '@/content/projects-data';
+import Link from 'next/link';
+import { featuredProjects, projects } from '@/content/projects-data';
 import { ProjectCard } from '@/components/ProjectCard';
 import { SkillCard } from '@/components/SkillCard';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -18,14 +19,9 @@ return (
     alt="Federico Dominguez Molina"
     className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover object-top flex-shrink-0 ring-1 ring-zinc-700"
   />
-  <div className="space-y-3">
-    <h1 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.2] pb-1 bg-gradient-to-r from-zinc-100 via-blue-300 to-violet-400 bg-clip-text text-transparent">
-      Federico Dominguez Molina
-    </h1>
-    <p className="text-2xl md:text-3xl font-normal tracking-tight text-zinc-200">
-      Data into decisions.
-    </p>
-  </div>
+  <h1 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.2] pb-1 bg-gradient-to-r from-zinc-100 via-blue-300 to-violet-400 bg-clip-text text-transparent">
+    Federico Dominguez Molina
+  </h1>
 </div>
 <p className="text-base md:text-lg text-zinc-400 max-w-2xl leading-relaxed">
   Data Scientist & Engineer building <span className="text-zinc-100">AI agents</span>, <span className="text-zinc-100">LLM systems</span>, and <span className="text-zinc-100">end-to-end data pipelines</span>
@@ -189,8 +185,15 @@ Resume
 <section id="projects" className="space-y-8">
 <SectionHeading index="03" eyebrow="Selected Work" title="Projects" />
 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-{projects.map(p => <ProjectCard key={p.slug} project={p} />)}
+{featuredProjects.map(p => <ProjectCard key={p.slug} project={p} />)}
 </div>
+<Link
+href="/projects"
+className="group inline-flex items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-zinc-100"
+>
+View all {projects.length} projects
+<span aria-hidden="true" className="font-mono text-secondary transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none">→</span>
+</Link>
 </section>
 </Reveal>
 

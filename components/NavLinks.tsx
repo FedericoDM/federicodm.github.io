@@ -1,12 +1,20 @@
 'use client';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+/**
+ * Hash links are written absolute (`/#about`) so they still resolve from
+ * `/projects/...` and `/blog/...`, where there is no such section to scroll to.
+ */
 export const navLinks = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'contact', label: 'Contact' },
+  { href: '/#about', label: 'About', section: 'about' },
+  { href: '/#experience', label: 'Experience', section: 'experience' },
+  { href: '/projects', label: 'Projects', route: '/projects' },
+  // Add once the first post is published:
+  // { href: '/blog', label: 'Blog', route: '/blog' },
+  { href: '/#contact', label: 'Contact', section: 'contact' },
 ];
 
 export function useActiveSection() {
@@ -23,8 +31,9 @@ export function useActiveSection() {
       { rootMargin: '-15% 0px -75% 0px' }
     );
 
-    navLinks.forEach(({ id }) => {
-      const el = document.getElementById(id);
+    navLinks.forEach(({ section }) => {
+      if (!section) return;
+      const el = document.getElementById(section);
       if (el) observer.observe(el);
     });
 
@@ -34,26 +43,37 @@ export function useActiveSection() {
   return active;
 }
 
+/** A route link owns the whole subtree; a section link only counts on the home page. */
+export function useIsActive() {
+  const pathname = usePathname();
+  const activeSection = useActiveSection();
+
+  return (link: (typeof navLinks)[number]) => {
+    if (link.route) return pathname.startsWith(link.route);
+    return pathname === '/' && activeSection === link.section;
+  };
+}
+
 export function NavLinks() {
-  const active = useActiveSection();
+  const isActive = useIsActive();
 
   return (
     <div className="hidden sm:flex items-center gap-8 text-sm">
-      {navLinks.map(({ id, label }) => (
-        <a
-          key={id}
-          href={`#${id}`}
+      {navLinks.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
           className={`relative transition-colors ${
-            active === id ? 'text-zinc-100' : 'text-zinc-400 hover:text-zinc-100'
+            isActive(link) ? 'text-zinc-100' : 'text-zinc-400 hover:text-zinc-100'
           }`}
         >
-          {label}
+          {link.label}
           <span
             className={`absolute -bottom-1.5 left-0 h-px bg-secondary transition-all duration-300 ${
-              active === id ? 'w-full' : 'w-0'
+              isActive(link) ? 'w-full' : 'w-0'
             }`}
           />
-        </a>
+        </Link>
       ))}
     </div>
   );

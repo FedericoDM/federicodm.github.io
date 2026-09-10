@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import Link from 'next/link';
 import { MobileMenu } from '@/components/MobileMenu';
 import { NavLinks } from '@/components/NavLinks';
 
@@ -25,7 +26,6 @@ icons: {
 openGraph: {
 title: "Federico Dominguez Molina — Data Scientist & Engineer",
 description: "Data Scientist & Engineer building agentic pipelines, LLM systems, and data automation for social impact and business.",
-images: ['/og.png']
 },
 metadataBase: new URL('https://federicodm.github.io')
 };
@@ -40,7 +40,7 @@ return (
     </noscript>
     <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-[#0a0a0a]/80 backdrop-blur-md">
     <nav className="mx-auto max-w-5xl px-6 py-6 flex items-center justify-between">
-    <a href="#home" className="text-lg font-mono font-medium text-secondary hover:text-secondary-light transition-colors">FDM</a>
+    <Link href="/" className="text-lg font-mono font-medium text-secondary hover:text-secondary-light transition-colors">FDM</Link>
     <NavLinks />
     <MobileMenu />
     </nav>

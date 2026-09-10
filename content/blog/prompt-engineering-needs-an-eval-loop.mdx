@@ -1,0 +1,69 @@
+---
+title: Prompt engineering without an eval loop is just guessing
+description: How a classification task went from 65% to 87% accuracy — not by writing a cleverer prompt, but by building the thing that tells you whether a prompt is better.
+date: 2026-09-09
+tags: ['LLMs', 'Evaluation', 'Prompt Engineering']
+draft: true
+---
+
+Most prompt engineering I see — including plenty of my own, early on — works like
+this: read the output, feel that it's wrong, rewrite the prompt, read the output
+again, feel that it's better. Ship it.
+
+The problem isn't that this never works. It's that you can't tell when it does.
+You've got a sample size of however many outputs you happened to skim, drawn from
+whatever inputs happened to be at the top of the file, evaluated against a
+standard living entirely in your head. Change three things at once, decide the
+result "reads better," and you've learned nothing you can build on.
+
+I ran into this on a classification task that was sitting at 65% accuracy. It
+ended up at 87%. Almost none of that came from writing a cleverer prompt. It came
+from building the thing that could tell me whether a prompt was actually better.
+
+## The annotated set comes first
+
+Before touching the prompt, I built a labeled dataset — real inputs from the
+actual distribution, hand-annotated with the correct answer.
+
+This is the step everyone wants to skip, because it's the boring one. It's also
+the one that converts opinion into measurement. Without it, "this prompt is
+better" is a vibe. With it, it's a number you can defend, and more importantly,
+a number that can go *down* — which is the only way to catch a change that helped
+one category while quietly breaking two others.
+
+A few things that mattered more than I expected:
+
+- **Sample from the real distribution, not the interesting cases.** It's tempting
+  to fill the set with hard examples, because those are the ones you're thinking
+  about. Do that and your measured accuracy stops predicting production accuracy.
+- **Annotate before you look at model output.** Once you've seen what the model
+  said, your sense of the right answer bends toward it.
+- **Write down the edge-case rulings.** Half the disagreement in labeling is two
+  reasonable people applying different unstated rules. Making them stated is most
+  of the work.
+
+## Then change one thing at a time
+
+With a scored set, the loop becomes ordinary engineering: change one thing,
+measure, keep or revert.
+
+That constraint — *one thing* — is what makes the loop compound. Batch five
+changes together and a 4-point gain tells you nothing about which of the five
+earned it, so you can't press on the one that worked. Isolating changes feels
+slower per iteration and is dramatically faster per point of accuracy.
+
+The errors also stop being anecdotes. When you can group failures by category
+instead of recalling them one at a time, patterns surface fast — and most of them
+turn out not to be prompt problems at all. Ambiguous class definitions, label
+noise, inputs that no prompt could resolve because the information isn't in them.
+Those are fixed by changing the task, not the wording.
+
+## What this actually buys you
+
+The accuracy number is the headline, but it isn't the real return. The real
+return is that improvement becomes repeatable. When the model changes, when the
+input distribution drifts, when someone adds a category six months later — you
+re-run the set and you know where you stand, instead of starting the guessing
+over.
+
+The eval loop is the durable artifact. The prompt is just its current output.
