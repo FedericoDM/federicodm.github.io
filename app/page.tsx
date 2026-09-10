@@ -11,9 +11,11 @@ export default function HomePage() {
 return (
 <div className="space-y-24">
 {/* Hero Section */}
-{/* Copy leads; the network sits alongside it on wide screens and stacks below on narrow ones. */}
-<section id="home" className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-12">
-<div className="space-y-8">
+{/* The network is a layer of this section, not a sibling of the copy — it fills
+    the hero and masks itself out under the text. */}
+<section id="home" className="relative flex min-h-[22rem] items-center lg:min-h-[27rem]">
+<NeuralNetwork />
+<div className="relative z-10 w-full max-w-xl space-y-8">
 <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
   <img
     src="/FedericoDominguezMolina_Headshot.jpg"
@@ -60,7 +62,6 @@ Resume
 </a>
 </div>
 </div>
-<NeuralNetwork />
 </section>
 
 {/* About Section */}

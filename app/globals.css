@@ -63,6 +63,48 @@
     @apply bg-zinc-700;
   }
 
+  /*
+   * Fades the hero network out where the copy sits, so it reads as part of the
+   * page rather than a rectangle pasted beside it. Narrow screens stack the
+   * text over the whole graph, so there the falloff runs top-to-bottom;
+   * wide screens put the copy on the left, so it runs left-to-right.
+   */
+  .network-mask {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 38%,
+      rgba(0, 0, 0, 0.4) 66%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 38%,
+      rgba(0, 0, 0, 0.4) 66%,
+      #000 100%
+    );
+  }
+
+  @media (min-width: 900px) {
+    .network-mask {
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 22%,
+        rgba(0, 0, 0, 0.1) 42%,
+        rgba(0, 0, 0, 0.45) 56%,
+        #000 74%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 22%,
+        rgba(0, 0, 0, 0.1) 42%,
+        rgba(0, 0, 0, 0.45) 56%,
+        #000 74%
+      );
+    }
+  }
+
   /* Scroll-reveal (see components/Reveal.tsx) */
   .reveal {
     opacity: 1;

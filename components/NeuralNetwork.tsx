@@ -24,7 +24,15 @@ const POINTER_RADIUS = 110;
 const WARM_START = 1.4;
 /** Where the graph sits in its panel, as fractions of the canvas box. The
  *  column labels are placed from these same numbers so the two can't drift. */
-const FIELD = { left: 0.12, right: 0.88, top: 0.10, bottom: 0.82 };
+const WIDE_FIELD = { left: 0.5, right: 0.97, top: 0.1, bottom: 0.74 };
+const NARROW_FIELD = { left: 0.06, right: 0.94, top: 0.14, bottom: 0.80 };
+/** Wide screens seat the graph to the right of the hero copy; narrow ones let it
+ *  span the full width behind the text, where the mask keeps it faint. */
+const fieldFor = (width: number) => (width >= 900 ? WIDE_FIELD : NARROW_FIELD);
+
+/** One per layer: names the pipeline the network stands in for, so the graphic
+ *  says something instead of being generic ML wallpaper. */
+const LAYER_LABELS = ['data', 'features', 'model', 'decision'];
 
 /** Positive weights read blue, negative violet — the hero gradient's two ends. */
 const POSITIVE = [96, 165, 250] as const;
@@ -171,10 +179,21 @@ export function NeuralNetwork() {
     };
 
     const project = () => {
+      const field = fieldFor(width);
+      const span = field.right - field.left;
+
       for (const node of nodes) {
-        node.x = (FIELD.left + node.nx * (FIELD.right - FIELD.left)) * width;
-        node.y = (FIELD.top + node.ny * (FIELD.bottom - FIELD.top)) * height;
+        node.x = (field.left + node.nx * span) * width;
+        node.y = (field.top + node.ny * (field.bottom - field.top)) * height;
       }
+
+      // Publish the field so the DOM labels can be placed from the same numbers
+      // the canvas just used, at whatever breakpoint is active.
+      for (let l = 0; l < LAYERS.length; l++) {
+        const t = l / (LAYERS.length - 1);
+        wrap.style.setProperty(`--layer-${l}`, `${(field.left + t * span) * 100}%`);
+      }
+      wrap.style.setProperty('--field-bottom', `${field.bottom * 100}%`);
     };
 
     const fireLayer = (layer: number) => {
@@ -407,54 +426,46 @@ export function NeuralNetwork() {
     };
   }, []);
 
-  // Sat just under the field rather than at the panel's bottom edge, so no dead
-  // band opens up between the last row of nodes and its own label.
-  const label = 'absolute -translate-x-1/2 whitespace-nowrap';
-  const labelTop = `calc(${FIELD.bottom * 100}% + 0.6rem)`;
-
   return (
-    // No panel chrome: sitting in its own hero column, the graph is already
-    // separated from the copy, so a border would just box in empty space.
-    <figure className="w-full">
-      <div
-        ref={wrapRef}
-        aria-hidden="true"
-        className="relative h-56 w-full font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600 sm:h-60 lg:h-[15rem]"
-      >
-        <canvas className="h-full w-full" ref={canvasRef} />
-        <span className={label} style={{ top: labelTop, left: `${FIELD.left * 100}%` }}>
-          input
-        </span>
+    // A layer of the hero rather than an object sitting next to it: the canvas
+    // fills the section and the mask fades it out under the copy.
+    <div
+      ref={wrapRef}
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 select-none font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600"
+    >
+      <canvas ref={canvasRef} className="network-mask h-full w-full" />
+
+      {/* Positions come from CSS vars that project() writes off the live field,
+          so the labels track the columns they name across every breakpoint. */}
+      {LAYER_LABELS.map((text, i) => (
         <span
-          className={label}
-          style={{ top: labelTop, left: `${((FIELD.left + FIELD.right) / 2) * 100}%` }}
+          key={text}
+          className="absolute hidden -translate-x-1/2 whitespace-nowrap lg:block"
+          style={{ left: `var(--layer-${i})`, top: 'calc(var(--field-bottom) + 0.9rem)' }}
         >
-          hidden
+          {text}
         </span>
-        <span className={label} style={{ top: labelTop, left: `${FIELD.right * 100}%` }}>
-          output
+      ))}
+
+      <div
+        className="absolute right-0 hidden items-center gap-3 lg:flex"
+        style={{ top: 'calc(var(--field-bottom) + 2.6rem)' }}
+      >
+        <span className="text-zinc-500">{LAYERS.join(' → ')}</span>
+        <span className="text-zinc-700">·</span>
+        <span ref={statusRef} className="text-secondary">
+          idle
+        </span>
+        <span className="text-zinc-700">·</span>
+        <span>
+          epoch <span ref={epochRef} className="text-zinc-500">01</span>
+        </span>
+        <span className="text-zinc-700">·</span>
+        <span>
+          drift <span ref={lossRef} className="text-zinc-500">0.000</span>
         </span>
       </div>
-
-      {/* Two deliberate rows: the architecture is fixed, the row below it is live.
-          Splitting them also stops the readout wrapping mid-list in a narrow column. */}
-      <figcaption className="mt-4 space-y-1.5 border-t border-zinc-800/70 pt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-zinc-400">{LAYERS.join(' → ')}</span>
-          <span ref={statusRef} className="text-secondary">
-            idle
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <span>
-            epoch <span ref={epochRef} className="text-zinc-400">01</span>
-          </span>
-          <span className="text-zinc-700">·</span>
-          <span>
-            drift <span ref={lossRef} className="text-zinc-400">0.000</span>
-          </span>
-        </div>
-      </figcaption>
-    </figure>
+    </div>
   );
 }
