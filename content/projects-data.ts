@@ -10,10 +10,14 @@ export type Project = {
   featured?: boolean;
   org?: string;
   period?: string;
+  /** Collaborators, shown under the title. */
+  credit?: string;
   /** Case-study body. Any section left undefined is simply not rendered. */
   context?: string;
   approach?: string[];
   outcome?: string[];
+  /** Real output from the project, shown on the case study. Files live in /public. */
+  media?: { src: string; alt: string; caption: string }[];
 };
 
 export const projects: Project[] = [
@@ -84,6 +88,29 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'ecoscout-government-contacts',
+    title: 'EcoScout: AI Agents for Government Contact Data',
+    description:
+      'Multi-agent pipeline that mapped 5,501 local government bodies across nine African countries, collecting contact details, websites and social media for mayors, governors, council chairs, environmental regulators and planning authorities.',
+    tags: ['AI Agents', 'Multi-Agent Systems', 'LLMs', 'Web Scraping', 'Data Collection'],
+    org: 'Energy & Environment Lab',
+    credit: 'With Vishal Vincent Joseph, Data Science Research Manager at the E&E Lab',
+    context:
+      'A potential intervention would deliver air-quality information directly to local government offices and measure its effect on outcomes. That starts with knowing who those offices are and how to reach them, across countries whose governments are structured and named in very different ways.',
+    approach: [
+      'Framed each country by hand first: a governance profile of its tiers, units, executives and environmental roles, checked against legal and statistical sources',
+      'A discovery agent searches the web for candidate websites for each institution, and a judge decides which one is correct, if any',
+      'Deterministic scraping code reads the sites that were found, and a separate contact agent looks up whatever is still missing',
+      'Code verifies every result at the end: domain lookups, phone checks and HTTP status checks on every site',
+      'Kept each agent to a narrow job and did as much as possible in plain code, since an agent given too many tasks fails on at least one',
+    ],
+    outcome: [
+      '5,501 bodies and 5,331 executive seats mapped across nine countries, using 1,021 agent runs and 10,662 web searches in about 26 hours of wall-clock time',
+      'The channel that works is country-specific: South Africa is 98% reachable by phone, Angola 91% by social media, Tanzania 86% by website',
+      'Low numbers are measured, not untested: 1,054 of DR Congo’s 1,061 bodies were searched and confirmed to have no discoverable web presence',
+    ],
+  },
+  {
     slug: 'automated-trading-platform',
     title: 'Automated Trading Platform',
     description:
@@ -141,6 +168,14 @@ export const projects: Project[] = [
     ],
     outcome: [
       'Supported "Academic Copaganda" with Dr. Robert Vargas, published in Law and Society Review',
+    ],
+    media: [
+      {
+        src: '/projects/policing-bias/altmetric-score-by-effect.png',
+        alt: 'Box plot of mean Altmetric journal context score for seven groups of papers, grouped by the kind of effect each paper reports',
+        caption:
+          'Mean Altmetric journal context score, grouped by the kind of effect each paper reports. One of the views used to check whether some papers drew unusual media attention.',
+      },
     ],
   },
   {

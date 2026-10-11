@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProject, projects } from '@/content/projects-data';
+import { EcoScoutFigure } from '@/components/viz/EcoScoutFigure';
 import { GraphReachViz } from '@/components/viz/GraphReachViz';
 import { KMeansViz } from '@/components/viz/KMeansViz';
 
@@ -14,6 +15,7 @@ type Params = { params: { slug: string } };
 const FIGURES: Record<string, () => JSX.Element> = {
   'ml-loan-recommender': KMeansViz,
   'air-pollution-alert-system': GraphReachViz,
+  'ecoscout-government-contacts': EcoScoutFigure,
 };
 
 export function generateStaticParams() {
@@ -104,6 +106,7 @@ export default function ProjectPage({ params }: Params) {
             {project.title}
           </h1>
           <div className="h-px w-11 bg-secondary" />
+          {project.credit && <p className="text-sm text-zinc-500">{project.credit}</p>}
         </div>
 
         {(project.link || project.github) && (
@@ -118,6 +121,17 @@ export default function ProjectPage({ params }: Params) {
         <p className="text-lg leading-relaxed text-zinc-300">{project.description}</p>
 
         {Figure && <Figure />}
+
+        {project.media?.map((item) => (
+          <figure key={item.src} className="space-y-3">
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="w-full rounded-lg border border-zinc-800"
+            />
+            <figcaption className="text-sm leading-relaxed text-zinc-500">{item.caption}</figcaption>
+          </figure>
+        ))}
 
         {project.context && (
           <Section title="Context">
