@@ -15,10 +15,7 @@ export type Project = {
   /** Case-study body. Any section left undefined is simply not rendered. */
   context?: string;
   approach?: string[];
-  outcome?: string[];
-  /** Real output from the project, shown on the case study. Files live in /public. */
-  media?: { src: string; alt: string; caption: string }[];
-};
+  outcome?: string[];};
 
 export const projects: Project[] = [
   {
@@ -168,16 +165,7 @@ export const projects: Project[] = [
     ],
     outcome: [
       'Supported "Academic Copaganda" with Dr. Robert Vargas, published in Law and Society Review',
-    ],
-    media: [
-      {
-        src: '/projects/policing-bias/altmetric-score-by-effect.png',
-        alt: 'Box plot of mean Altmetric journal context score for seven groups of papers, grouped by the kind of effect each paper reports',
-        caption:
-          'Mean Altmetric journal context score, grouped by the kind of effect each paper reports. One of the views used to check whether some papers drew unusual media attention.',
-      },
-    ],
-  },
+    ],  },
   {
     slug: 'social-media-analytics',
     title: 'Social Media Analytics Alert System',

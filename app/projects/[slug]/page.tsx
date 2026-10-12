@@ -122,17 +122,6 @@ export default function ProjectPage({ params }: Params) {
 
         {Figure && <Figure />}
 
-        {project.media?.map((item) => (
-          <figure key={item.src} className="space-y-3">
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="w-full rounded-lg border border-zinc-800"
-            />
-            <figcaption className="text-sm leading-relaxed text-zinc-500">{item.caption}</figcaption>
-          </figure>
-        ))}
-
         {project.context && (
           <Section title="Context">
             <p className="leading-relaxed text-zinc-400">{project.context}</p>
