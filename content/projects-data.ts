@@ -71,26 +71,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'ai-trading-agent',
-    title: 'AI Trading Agent',
-    description:
-      'Proof-of-concept AI agent built with Claude and custom tools to analyze investment portfolios against macroeconomic regimes and generate trade recommendations. Demonstrates LLM tool use, function calling, and agent orchestration patterns.',
-    tags: ['Claude API', 'AI Agent', 'Function Calling', 'Python', 'Trading'],
-    image:
-      'https://plus.unsplash.com/premium_photo-1725985758285-ca743318640e?w=800&h=450&fit=crop',
-    org: 'Personal project',
-    context:
-      'Portfolio review is a research task before it is a trading task: read the current macro regime, check how the holdings are positioned against it, then decide what to change. Gathering evidence, reasoning over it and proposing an action is what an agent with tools is actually good at, especially at scale.',
-    approach: [
-      'Built custom tools the model calls to pull portfolio holdings and macroeconomic indicators',
-      'Used Claude with function calling to reason over regime classification and current exposure together',
-      'Orchestrated multi-step analysis so the agent gathers evidence before recommending trades, rather than answering from a single prompt',
-    ],
-    outcome: [
-      'A working proof of concept for LLM tool use, function calling, and agent orchestration applied to portfolio analysis',
-    ],
-  },
-  {
     slug: 'ml-loan-recommender',
     title: 'ML Loan Recommendation System',
     description:
@@ -110,6 +90,26 @@ export const projects: Project[] = [
     outcome: [
       'Deployed end to end for a base of 500,000+ borrowers',
       'Improved conversion rates on loan offers',
+    ],
+  },
+  {
+    slug: 'ai-trading-agent',
+    title: 'AI Trading Agent',
+    description:
+      'Proof-of-concept AI agent built with Claude and custom tools to analyze investment portfolios against macroeconomic regimes and generate trade recommendations. Demonstrates LLM tool use, function calling, and agent orchestration patterns.',
+    tags: ['Claude API', 'AI Agent', 'Function Calling', 'Python', 'Trading'],
+    image:
+      'https://plus.unsplash.com/premium_photo-1725985758285-ca743318640e?w=800&h=450&fit=crop',
+    org: 'Personal project',
+    context:
+      'Portfolio review is a research task before it is a trading task: read the current macro regime, check how the holdings are positioned against it, then decide what to change. Gathering evidence, reasoning over it and proposing an action is what an agent with tools is actually good at, especially at scale.',
+    approach: [
+      'Built custom tools the model calls to pull portfolio holdings and macroeconomic indicators',
+      'Used Claude with function calling to reason over regime classification and current exposure together',
+      'Orchestrated multi-step analysis so the agent gathers evidence before recommending trades, rather than answering from a single prompt',
+    ],
+    outcome: [
+      'A working proof of concept for LLM tool use, function calling, and agent orchestration applied to portfolio analysis',
     ],
   },
   {
