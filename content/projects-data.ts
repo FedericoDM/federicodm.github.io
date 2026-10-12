@@ -49,7 +49,6 @@ export const projects: Project[] = [
     tags: ['Claude API', 'AI Agent', 'Function Calling', 'Python', 'Trading'],
     image:
       'https://plus.unsplash.com/premium_photo-1725985758285-ca743318640e?w=800&h=450&fit=crop',
-    featured: true,
     org: 'Personal project',
     context:
       'Portfolio review is a research task before it is a trading task: read the current macro regime, check how the holdings are positioned against it, then decide what to change. Gathering evidence, reasoning over it and proposing an action is what an agent with tools is actually good at, especially at scale.',
@@ -90,6 +89,8 @@ export const projects: Project[] = [
     description:
       'Multi-agent pipeline that mapped 5,501 local government bodies across nine African countries, collecting contact details, websites and social media for mayors, governors, council chairs, environmental regulators and planning authorities.',
     tags: ['AI Agents', 'Multi-Agent Systems', 'LLMs', 'Web Scraping', 'Data Collection'],
+    image: '/projects/ecoscout-card.svg',
+    featured: true,
     org: 'Energy & Environment Lab',
     credit: 'With Vishal Vincent Joseph, Data Science Research Manager at the E&E Lab',
     context:

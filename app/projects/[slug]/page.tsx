@@ -117,8 +117,8 @@ export default function ProjectPage({ params }: Params) {
         )}
       </div>
 
-      <div className="max-w-2xl space-y-10">
-        <p className="text-lg leading-relaxed text-zinc-300">{project.description}</p>
+      <div className="space-y-10">
+        <p className="max-w-3xl text-lg leading-relaxed text-zinc-300">{project.description}</p>
 
         {Figure && <Figure />}
 
