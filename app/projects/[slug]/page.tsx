@@ -106,7 +106,24 @@ export default function ProjectPage({ params }: Params) {
             {project.title}
           </h1>
           <div className="h-px w-11 bg-secondary" />
-          {project.credit && <p className="text-sm text-zinc-500">{project.credit}</p>}
+          {project.credit && (
+            <p className="text-sm text-zinc-500">
+              With{' '}
+              {project.credit.href ? (
+                <a
+                  href={project.credit.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-zinc-100 hover:decoration-secondary"
+                >
+                  {project.credit.name}
+                </a>
+              ) : (
+                project.credit.name
+              )}
+              {project.credit.role && `, ${project.credit.role}`}
+            </p>
+          )}
         </div>
 
         {(project.link || project.github) && (
