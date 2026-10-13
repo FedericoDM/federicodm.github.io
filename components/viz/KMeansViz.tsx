@@ -8,11 +8,13 @@ import { VizFigure } from './VizFigure';
 const K = 3;
 const POINT_COUNT = 150;
 /** Seconds between Lloyd iterations — slow enough to watch a step land. */
-const STEP_INTERVAL = 0.95;
-/** Simulated before the first paint. Long enough to cover two iterations, so
- *  the figure opens with the centroids already converging on the clusters
- *  rather than sitting on a motionless iteration zero. */
-const WARM_START = 2.6;
+const STEP_INTERVAL = 1.1;
+/** Each run tells the whole story: unlabelled data, then centroids appear,
+ *  then the clusters form one iteration at a time. */
+const RAW_TIME = 2.4;
+const SEED_TIME = 1.2;
+/** Opens on the unlabelled data, a moment in. */
+const WARM_START = 0.4;
 /** Centroid easing per second; the assignment is instant, the move is not. */
 const EASE = 5;
 /** Seconds to sit on a converged solution before re-seeding. */
@@ -29,8 +31,14 @@ const clamp01 = (value: number) => Math.min(0.98, Math.max(0.02, value));
 export function KMeansViz() {
   const iterationRef = useRef<HTMLSpanElement>(null);
   const inertiaRef = useRef<HTMLSpanElement>(null);
+  const statusRef = useRef<HTMLSpanElement>(null);
 
   const { wrapRef, canvasRef } = useCanvasScene((): Scene => {
+    let phase: 'raw' | 'seed' | 'fit' = 'raw';
+    let phaseTimer = 0;
+    /** 0 = everything grey and unlabelled, 1 = full cluster colour. */
+    let colorMix = 0;
+    let centroidAlpha = 0;
     let seed = 8412;
     let rand = mulberry32(seed);
     let points: Point[] = [];
@@ -115,7 +123,7 @@ export function KMeansViz() {
       }
 
       iteration++;
-      if (maxMove < 0.004 || iteration >= MAX_ITERATIONS) converged = true;
+      if (maxMove < 0.002 || iteration >= MAX_ITERATIONS) converged = true;
     };
 
     const seedData = () => {
@@ -146,27 +154,34 @@ export function KMeansViz() {
       for (let i = 0; i < POINT_COUNT; i++) {
         const blob = blobs[i % K];
         points.push({
-          nx: clamp01(blob.x + gaussian() * 0.07),
-          ny: clamp01(blob.y + gaussian() * 0.07),
+          nx: clamp01(blob.x + gaussian() * 0.11),
+          ny: clamp01(blob.y + gaussian() * 0.16),
           x: 0,
           y: 0,
           cluster: 0,
         });
       }
 
-      // Centroids start scattered, so the first iterations visibly do work.
+      // Centroids start bunched in one region, a poor but common initialisation,
+      // so it takes several visible iterations for them to spread out.
       centroids = [];
+      const startX = 0.25 + rand() * 0.5;
+      const startY = 0.3 + rand() * 0.4;
       for (let i = 0; i < K; i++) {
-        const nx = 0.1 + rand() * 0.8;
-        const ny = 0.12 + rand() * 0.76;
+        const nx = clamp01(startX + (rand() - 0.5) * 0.08);
+        const ny = clamp01(startY + (rand() - 0.5) * 0.12);
         centroids.push({ nx, ny, tx: nx, ty: ny, x: 0, y: 0 });
       }
 
       iteration = 0;
       timer = 0;
       holdTimer = 0;
+      inertia = 0;
       converged = false;
-      assign();
+      phase = 'raw';
+      phaseTimer = 0;
+      colorMix = 0;
+      centroidAlpha = 0;
     };
 
     const project = () => {
@@ -186,7 +201,19 @@ export function KMeansViz() {
       if (iterationRef.current) {
         iterationRef.current.textContent = String(iteration).padStart(2, '0');
       }
-      if (inertiaRef.current) inertiaRef.current.textContent = inertia.toFixed(3);
+      if (inertiaRef.current) {
+        inertiaRef.current.textContent = phase === 'fit' ? inertia.toFixed(3) : '—';
+      }
+      if (statusRef.current) {
+        statusRef.current.textContent =
+          phase === 'raw'
+            ? 'unlabelled data'
+            : phase === 'seed'
+              ? 'placing centroids'
+              : converged
+                ? 'converged'
+                : 'assign → update';
+      }
     };
 
     seedData();
@@ -201,7 +228,19 @@ export function KMeansViz() {
       },
 
       update: (dt) => {
-        if (converged) {
+        phaseTimer += dt;
+        if (phase === 'raw') {
+          if (phaseTimer >= RAW_TIME) {
+            phase = 'seed';
+            phaseTimer = 0;
+          }
+        } else if (phase === 'seed') {
+          if (phaseTimer >= SEED_TIME) {
+            phase = 'fit';
+            phaseTimer = 0;
+            iterate();
+          }
+        } else if (converged) {
           holdTimer += dt;
           if (holdTimer > HOLD) seedData();
         } else {
@@ -214,6 +253,9 @@ export function KMeansViz() {
 
         // Frame-rate independent easing.
         const k = 1 - Math.exp(-EASE * dt);
+        const fade = 1 - Math.exp(-3 * dt);
+        centroidAlpha += ((phase === 'raw' ? 0 : 1) - centroidAlpha) * fade;
+        colorMix += ((phase === 'fit' ? 1 : 0) - colorMix) * fade;
         for (const centroid of centroids) {
           centroid.nx += (centroid.tx - centroid.nx) * k;
           centroid.ny += (centroid.ty - centroid.ny) * k;
@@ -231,23 +273,36 @@ export function KMeansViz() {
       draw: (ctx) => {
         // Assignment lines first, faint: they show membership without competing.
         ctx.lineWidth = 0.6;
-        for (const point of points) {
-          const centroid = centroids[point.cluster];
-          if (!centroid) continue;
-          ctx.strokeStyle = rgba(CLUSTER_COLORS[point.cluster % CLUSTER_COLORS.length], 0.07);
-          ctx.beginPath();
-          ctx.moveTo(point.x, point.y);
-          ctx.lineTo(centroid.x, centroid.y);
-          ctx.stroke();
+        if (colorMix > 0.01) {
+          for (const point of points) {
+            const centroid = centroids[point.cluster];
+            if (!centroid) continue;
+            ctx.strokeStyle = rgba(
+              CLUSTER_COLORS[point.cluster % CLUSTER_COLORS.length],
+              0.08 * colorMix
+            );
+            ctx.beginPath();
+            ctx.moveTo(point.x, point.y);
+            ctx.lineTo(centroid.x, centroid.y);
+            ctx.stroke();
+          }
         }
 
+        // Unlabelled points are neutral grey; colour arrives with assignment.
+        const grey = [161, 161, 170];
         for (const point of points) {
-          ctx.fillStyle = rgba(CLUSTER_COLORS[point.cluster % CLUSTER_COLORS.length], 0.55);
+          const color = CLUSTER_COLORS[point.cluster % CLUSTER_COLORS.length];
+          const mixed = color.map((channel, c) =>
+            Math.round(grey[c] + (channel - grey[c]) * colorMix)
+          );
+          ctx.fillStyle = rgba(mixed, 0.5 + 0.1 * colorMix);
           ctx.beginPath();
           ctx.arc(point.x, point.y, 1.9, 0, TAU);
           ctx.fill();
         }
 
+        if (centroidAlpha < 0.01) return;
+        ctx.globalAlpha = centroidAlpha;
         for (let i = 0; i < centroids.length; i++) {
           const color = CLUSTER_COLORS[i % CLUSTER_COLORS.length];
           const centroid = centroids[i];
@@ -266,6 +321,7 @@ export function KMeansViz() {
           ctx.arc(centroid.x, centroid.y, 9, 0, TAU);
           ctx.stroke();
         }
+        ctx.globalAlpha = 1;
       },
     };
   });
@@ -277,6 +333,10 @@ export function KMeansViz() {
       method="k-means over borrower features"
       readout={
         <>
+          <span ref={statusRef} className="text-secondary">
+            unlabelled data
+          </span>
+          <span className="text-zinc-700">·</span>
           <span>k = {K}</span>
           <span className="text-zinc-700">·</span>
           <span>

@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProject, projects } from '@/content/projects-data';
+import { EcoScoutFigure } from '@/components/viz/EcoScoutFigure';
 import { GraphReachViz } from '@/components/viz/GraphReachViz';
 import { KMeansViz } from '@/components/viz/KMeansViz';
+import { TradingAgentFigure } from '@/components/viz/TradingAgentFigure';
 
 type Params = { params: { slug: string } };
 
@@ -14,6 +16,8 @@ type Params = { params: { slug: string } };
 const FIGURES: Record<string, () => JSX.Element> = {
   'ml-loan-recommender': KMeansViz,
   'air-pollution-alert-system': GraphReachViz,
+  'ecoscout-government-contacts': EcoScoutFigure,
+  'ai-trading-agent': TradingAgentFigure,
 };
 
 export function generateStaticParams() {
@@ -104,6 +108,24 @@ export default function ProjectPage({ params }: Params) {
             {project.title}
           </h1>
           <div className="h-px w-11 bg-secondary" />
+          {project.credit && (
+            <p className="text-sm text-zinc-500">
+              With{' '}
+              {project.credit.href ? (
+                <a
+                  href={project.credit.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-zinc-100 hover:decoration-secondary"
+                >
+                  {project.credit.name}
+                </a>
+              ) : (
+                project.credit.name
+              )}
+              {project.credit.role && `, ${project.credit.role}`}
+            </p>
+          )}
         </div>
 
         {(project.link || project.github) && (
@@ -114,7 +136,7 @@ export default function ProjectPage({ params }: Params) {
         )}
       </div>
 
-      <div className="max-w-2xl space-y-10">
+      <div className="space-y-10">
         <p className="text-lg leading-relaxed text-zinc-300">{project.description}</p>
 
         {Figure && <Figure />}

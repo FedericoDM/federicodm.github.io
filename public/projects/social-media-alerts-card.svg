@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="A monitored social media stream with an alert raised where activity spikes">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <pattern id="dots" width="25" height="25" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#3f3f46" opacity="0.45"/>
+    </pattern>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#dots)"/>
+  <path d="M90 330 L90 303 L100 281 L111 292 L121 268 L131 289 L142 304 L152 307 L162 279 L172 285 L183 287 L193 263 L203 307 L214 297 L224 295 L234 300 L244 287 L255 292 L265 298 L275 298 L286 285 L296 277 L306 296 L317 294 L327 279 L337 301 L348 296 L358 294 L368 291 L378 296 L389 304 L399 287 L409 305 L420 293 L430 294 L440 305 L450 291 L461 290 L471 270 L481 255 L492 220 L502 168 L512 125 L523 124 L533 143 L543 164 L554 212 L564 263 L574 287 L584 275 L595 285 L605 301 L615 310 L626 300 L636 278 L646 303 L656 290 L667 287 L677 294 L687 281 L698 282 L708 261 L708 330 Z" fill="#38bdf8" fill-opacity="0.08"/>
+  <path d="M90 303 L100 281 L111 292 L121 268 L131 289 L142 304 L152 307 L162 279 L172 285 L183 287 L193 263 L203 307 L214 297 L224 295 L234 300 L244 287 L255 292 L265 298 L275 298 L286 285 L296 277 L306 296 L317 294 L327 279 L337 301 L348 296 L358 294 L368 291 L378 296 L389 304 L399 287 L409 305 L420 293 L430 294 L440 305 L450 291 L461 290 L471 270 L481 255 L492 220 L502 168 L512 125 L523 124 L533 143 L543 164 L554 212 L564 263 L574 287 L584 275 L595 285 L605 301 L615 310 L626 300 L636 278 L646 303 L656 290 L667 287 L677 294 L687 281 L698 282 L708 261" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.85"/>
+  <line x1="90.0" y1="205.0" x2="710.0" y2="205.0" stroke="#fbbf24" stroke-width="1.2" opacity="0.55" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <text x="710" y="195" fill="#fbbf24" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="2.5" text-anchor="end">THRESHOLD</text>
+  <circle cx="522.6" cy="124.4" r="8.0" fill="#fbbf24" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="522.6" cy="124.4" r="7.0" fill="#fbbf24" opacity="1"/>
+  <circle cx="523" cy="124" r="16" fill="none" stroke="#fbbf24" stroke-width="1.2" opacity="0.6"/>
+  <text x="522.6" y="96.4138541753403" fill="#fbbf24" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.5" text-anchor="middle">ALERT</text>
+  <line x1="90.0" y1="330.0" x2="710.0" y2="330.0" stroke="#3f3f46" stroke-width="1.2" opacity="1.0" stroke-linecap="round"/>
+</svg>

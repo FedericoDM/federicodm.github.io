@@ -10,11 +10,12 @@ export type Project = {
   featured?: boolean;
   org?: string;
   period?: string;
+  /** Collaborator, shown under the title as "With <name>, <role>". */
+  credit?: { name: string; role?: string; href?: string };
   /** Case-study body. Any section left undefined is simply not rendered. */
   context?: string;
   approach?: string[];
-  outcome?: string[];
-};
+  outcome?: string[];};
 
 export const projects: Project[] = [
   {
@@ -24,7 +25,7 @@ export const projects: Project[] = [
       'Built within a World Bank & NASA-backed RCT: a global alert system targeting air pollution advocates from 30+ cities using X (Twitter), NLP, graph analysis, and real-time satellite pollution data. Reached 200,000+ impressions in three months.',
     tags: ['Python', 'NLP', 'AWS', 'Graph Analysis', 'Real-time Data'],
     link: 'https://climate.uchicago.edu/entities/empowering-environmental-governance-with-satellite-data-a-global-randomized-control-trial/',
-    image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=450&fit=crop',
+    image: '/projects/air-pollution-card.svg',
     featured: true,
     org: 'Energy & Environment Lab',
     period: '2024 — Present',
@@ -41,24 +42,32 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'ai-trading-agent',
-    title: 'AI Trading Agent',
+    slug: 'ecoscout-government-contacts',
+    title: 'EcoScout: AI Agents for Government Contact Data',
     description:
-      'Proof-of-concept AI agent built with Claude and custom tools to analyze investment portfolios against macroeconomic regimes and generate trade recommendations. Demonstrates LLM tool use, function calling, and agent orchestration patterns.',
-    tags: ['Claude API', 'AI Agent', 'Function Calling', 'Python', 'Trading'],
-    image:
-      'https://plus.unsplash.com/premium_photo-1725985758285-ca743318640e?w=800&h=450&fit=crop',
+      'Multi-agent pipeline that mapped 5,501 local government bodies across nine African countries, collecting contact details, websites and social media for mayors, governors, council chairs, environmental regulators and planning authorities.',
+    tags: ['AI Agents', 'Multi-Agent Systems', 'LLMs', 'Web Scraping', 'Data Collection'],
+    image: '/projects/ecoscout-card.svg',
     featured: true,
-    org: 'Personal project',
+    org: 'Energy & Environment Lab',
+    credit: {
+      name: 'Vishal Vincent Joseph',
+      role: 'Data Science Research Manager at the E&E Lab',
+      href: 'http://vishalvjoseph.com/',
+    },
     context:
-      'Portfolio review is a research task before it is a trading task: read the current macro regime, check how the holdings are positioned against it, then decide what to change. Gathering evidence, reasoning over it and proposing an action is what an agent with tools is actually good at, especially at scale.',
+      'A potential intervention would deliver air-quality information directly to local government offices and measure its effect on outcomes. That starts with knowing who those offices are and how to reach them, across countries whose governments are structured and named in very different ways.',
     approach: [
-      'Built custom tools the model calls to pull portfolio holdings and macroeconomic indicators',
-      'Used Claude with function calling to reason over regime classification and current exposure together',
-      'Orchestrated multi-step analysis so the agent gathers evidence before recommending trades, rather than answering from a single prompt',
+      'Framed each country by hand first: a governance profile of its tiers, units, executives and environmental roles, checked against legal and statistical sources',
+      'A discovery agent searches the web for candidate websites for each institution, and a judge decides which one is correct, if any',
+      'Deterministic scraping code reads the sites that were found, and a separate contact agent looks up whatever is still missing',
+      'Code verifies every result at the end: domain lookups, phone checks and HTTP status checks on every site',
+      'Kept each agent to a narrow job and did as much as possible in plain code, since an agent given too many tasks fails on at least one',
     ],
     outcome: [
-      'A working proof of concept for LLM tool use, function calling, and agent orchestration applied to portfolio analysis',
+      '5,501 bodies and 5,331 executive seats mapped across nine countries, using 1,021 agent runs and 10,662 web searches in about 26 hours of wall-clock time',
+      'The channel that works is country-specific: South Africa is 98% reachable by phone, Angola 91% by social media, Tanzania 86% by website',
+      'Low numbers are measured, not untested: 1,054 of DR Congo’s 1,061 bodies were searched and confirmed to have no discoverable web presence',
     ],
   },
   {
@@ -67,7 +76,7 @@ export const projects: Project[] = [
     description:
       'Developed machine learning recommender system to offer customized loans to over 500,000 borrowers, improving conversion rates.',
     tags: ['Python', 'ML', 'scikit-learn', 'Recommendation Systems'],
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=450&fit=crop',
+    image: '/projects/loan-recommender-card.svg',
     featured: true,
     org: 'deep_dive',
     period: '2021 — 2023',
@@ -84,12 +93,33 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'ai-trading-agent',
+    title: 'AI Portfolio Analyst Agent',
+    description:
+      'An AI agent built with Claude that reviews a set of portfolios every day: it reads the macro regime, rates each portfolio against it, flags the automated trading agents that no longer fit, and proposes what to change. Every proposal waits for human approval.',
+    tags: ['Claude API', 'AI Agent', 'Function Calling', 'Python', 'Trading'],
+    image: '/projects/ai-trading-agent-card.svg',
+    context:
+      'Each portfolio is run by a group of automated trading agents, and each agent trades its own small set of instruments. The daily question is not what to buy, but whether those agents still suit the market they are trading in. Answering it means gathering evidence, reasoning over it and proposing an action, which is what an agent with tools is good at, especially across many portfolios at once.',
+    approach: [
+      'Built custom tools the model calls to pull sector performance, portfolio holdings and each trading agent’s track record',
+      'The agent first classifies the macro regime (which sector dominates and how high the risk is) from market data and news, before it looks at any portfolio',
+      'It then rates every portfolio as healthy or on watch against that regime, and flags the trading agents that are underperforming or misaligned',
+      'Proposals come in three kinds: replace an agent with a stronger unused one, keep monitoring, or incubate a new agent the regime calls for, each with a priority and written reasoning',
+      'Kept the agent advisory by design: nothing changes in a portfolio until a person approves it',
+    ],
+    outcome: [
+      'A formatted daily report covering the regime, portfolio health, flagged agents, prioritised proposals, upcoming market events and a one-paragraph verdict',
+      'A working example of LLM tool use, function calling and agent orchestration applied to portfolio oversight, with a human approval gate',
+    ],
+  },
+  {
     slug: 'automated-trading-platform',
     title: 'Automated Trading Platform',
     description:
       'Designed EC2 architecture and Python code to auto-trade over 10+ portfolios through Interactive Brokers with daily stock price ingestion.',
     tags: ['Python', 'AWS EC2', 'Trading', 'SQL', 'Automation'],
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop',
+    image: '/projects/automated-trading-card.svg',
     org: 'Personal project',
     context:
       'Running more than ten portfolios by hand does not scale, and manual execution introduces exactly the timing and consistency errors a strategy is meant to avoid.',
@@ -107,7 +137,7 @@ export const projects: Project[] = [
       'Built a Python data platform allowing City of Long Beach Climate Office to download data from 2010-2023, improving access and saving hundreds of work hours annually.',
     tags: ['Python', 'Data Engineering', 'Climate', 'Civic Tech'],
     github: 'https://github.com/City-of-Long-Beach-Public/climate_inventory',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=450&fit=crop',
+    image: '/projects/climate-data-card.svg',
     org: 'Coding it Forward · City of Long Beach',
     period: '2023',
     context:
@@ -129,7 +159,7 @@ export const projects: Project[] = [
       'Created 10+ interactive visualizations and dashboards with Plotly to detect bias in 250+ policing research papers for academic research.',
     tags: ['Python', 'Plotly', 'Data Visualization', 'Research'],
     link: 'https://www.cambridge.org/core/journals/law-and-society-review/article/academic-copaganda/1D096FAF1C38403739FCBB8D482FE24A',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop',
+    image: '/projects/policing-research-card.svg',
     org: 'University of Chicago',
     period: '2023 — 2024',
     context:
@@ -141,15 +171,14 @@ export const projects: Project[] = [
     ],
     outcome: [
       'Supported "Academic Copaganda" with Dr. Robert Vargas, published in Law and Society Review',
-    ],
-  },
+    ],  },
   {
     slug: 'social-media-analytics',
     title: 'Social Media Analytics Alert System',
     description:
       'Led automatic alert system project to help 20+ clients improve customer relationships via social media analytics and real-time monitoring.',
     tags: ['Python', 'NLP', 'Social Media', 'AWS'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop',
+    image: '/projects/social-media-alerts-card.svg',
     org: 'deep_dive',
     period: '2021 — 2023',
     context:
@@ -168,7 +197,7 @@ export const projects: Project[] = [
       'Co-developed FastAPI web platform to play laboratory games and inform research on children decision-making behavior.',
     tags: ['Python', 'FastAPI', 'Research', 'Web Development'],
     link: 'https://uchicago.app.box.com/s/e1vqcx2353uod7g4m3rt7nkfh7znanxr',
-    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=450&fit=crop',
+    image: '/projects/lab-games-card.svg',
     org: 'University of Chicago',
     period: '2023 — 2024',
     context:
