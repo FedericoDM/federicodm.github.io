@@ -25,7 +25,7 @@ export const projects: Project[] = [
       'Built within a World Bank & NASA-backed RCT: a global alert system targeting air pollution advocates from 30+ cities using X (Twitter), NLP, graph analysis, and real-time satellite pollution data. Reached 200,000+ impressions in three months.',
     tags: ['Python', 'NLP', 'AWS', 'Graph Analysis', 'Real-time Data'],
     link: 'https://climate.uchicago.edu/entities/empowering-environmental-governance-with-satellite-data-a-global-randomized-control-trial/',
-    image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=450&fit=crop',
+    image: '/projects/air-pollution-card.svg',
     featured: true,
     org: 'Energy & Environment Lab',
     period: '2024 — Present',
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     description:
       'Developed machine learning recommender system to offer customized loans to over 500,000 borrowers, improving conversion rates.',
     tags: ['Python', 'ML', 'scikit-learn', 'Recommendation Systems'],
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=450&fit=crop',
+    image: '/projects/loan-recommender-card.svg',
     featured: true,
     org: 'deep_dive',
     period: '2021 — 2023',
@@ -98,8 +98,7 @@ export const projects: Project[] = [
     description:
       'Proof-of-concept AI agent built with Claude and custom tools to analyze investment portfolios against macroeconomic regimes and generate trade recommendations. Demonstrates LLM tool use, function calling, and agent orchestration patterns.',
     tags: ['Claude API', 'AI Agent', 'Function Calling', 'Python', 'Trading'],
-    image:
-      'https://plus.unsplash.com/premium_photo-1725985758285-ca743318640e?w=800&h=450&fit=crop',
+    image: '/projects/ai-trading-agent-card.svg',
     org: 'Personal project',
     context:
       'Portfolio review is a research task before it is a trading task: read the current macro regime, check how the holdings are positioned against it, then decide what to change. Gathering evidence, reasoning over it and proposing an action is what an agent with tools is actually good at, especially at scale.',
@@ -118,7 +117,7 @@ export const projects: Project[] = [
     description:
       'Designed EC2 architecture and Python code to auto-trade over 10+ portfolios through Interactive Brokers with daily stock price ingestion.',
     tags: ['Python', 'AWS EC2', 'Trading', 'SQL', 'Automation'],
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop',
+    image: '/projects/automated-trading-card.svg',
     org: 'Personal project',
     context:
       'Running more than ten portfolios by hand does not scale, and manual execution introduces exactly the timing and consistency errors a strategy is meant to avoid.',
@@ -136,7 +135,7 @@ export const projects: Project[] = [
       'Built a Python data platform allowing City of Long Beach Climate Office to download data from 2010-2023, improving access and saving hundreds of work hours annually.',
     tags: ['Python', 'Data Engineering', 'Climate', 'Civic Tech'],
     github: 'https://github.com/City-of-Long-Beach-Public/climate_inventory',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=450&fit=crop',
+    image: '/projects/climate-data-card.svg',
     org: 'Coding it Forward · City of Long Beach',
     period: '2023',
     context:
@@ -158,7 +157,7 @@ export const projects: Project[] = [
       'Created 10+ interactive visualizations and dashboards with Plotly to detect bias in 250+ policing research papers for academic research.',
     tags: ['Python', 'Plotly', 'Data Visualization', 'Research'],
     link: 'https://www.cambridge.org/core/journals/law-and-society-review/article/academic-copaganda/1D096FAF1C38403739FCBB8D482FE24A',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop',
+    image: '/projects/policing-research-card.svg',
     org: 'University of Chicago',
     period: '2023 — 2024',
     context:
@@ -177,7 +176,7 @@ export const projects: Project[] = [
     description:
       'Led automatic alert system project to help 20+ clients improve customer relationships via social media analytics and real-time monitoring.',
     tags: ['Python', 'NLP', 'Social Media', 'AWS'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop',
+    image: '/projects/social-media-alerts-card.svg',
     org: 'deep_dive',
     period: '2021 — 2023',
     context:
@@ -196,7 +195,7 @@ export const projects: Project[] = [
       'Co-developed FastAPI web platform to play laboratory games and inform research on children decision-making behavior.',
     tags: ['Python', 'FastAPI', 'Research', 'Web Development'],
     link: 'https://uchicago.app.box.com/s/e1vqcx2353uod7g4m3rt7nkfh7znanxr',
-    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=450&fit=crop',
+    image: '/projects/lab-games-card.svg',
     org: 'University of Chicago',
     period: '2023 — 2024',
     context:
