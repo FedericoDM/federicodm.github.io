@@ -5,6 +5,7 @@ import { getProject, projects } from '@/content/projects-data';
 import { EcoScoutFigure } from '@/components/viz/EcoScoutFigure';
 import { GraphReachViz } from '@/components/viz/GraphReachViz';
 import { KMeansViz } from '@/components/viz/KMeansViz';
+import { TradingAgentFigure } from '@/components/viz/TradingAgentFigure';
 
 type Params = { params: { slug: string } };
 
@@ -16,6 +17,7 @@ const FIGURES: Record<string, () => JSX.Element> = {
   'ml-loan-recommender': KMeansViz,
   'air-pollution-alert-system': GraphReachViz,
   'ecoscout-government-contacts': EcoScoutFigure,
+  'ai-trading-agent': TradingAgentFigure,
 };
 
 export function generateStaticParams() {

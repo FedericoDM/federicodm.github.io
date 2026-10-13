@@ -94,21 +94,23 @@ export const projects: Project[] = [
   },
   {
     slug: 'ai-trading-agent',
-    title: 'AI Trading Agent',
+    title: 'AI Portfolio Analyst Agent',
     description:
-      'Proof-of-concept AI agent built with Claude and custom tools to analyze investment portfolios against macroeconomic regimes and generate trade recommendations. Demonstrates LLM tool use, function calling, and agent orchestration patterns.',
+      'An AI agent built with Claude that reviews a set of portfolios every day: it reads the macro regime, rates each portfolio against it, flags the automated trading agents that no longer fit, and proposes what to change. Every proposal waits for human approval.',
     tags: ['Claude API', 'AI Agent', 'Function Calling', 'Python', 'Trading'],
     image: '/projects/ai-trading-agent-card.svg',
-    org: 'Personal project',
     context:
-      'Portfolio review is a research task before it is a trading task: read the current macro regime, check how the holdings are positioned against it, then decide what to change. Gathering evidence, reasoning over it and proposing an action is what an agent with tools is actually good at, especially at scale.',
+      'Each portfolio is run by a group of automated trading agents, and each agent trades its own small set of instruments. The daily question is not what to buy, but whether those agents still suit the market they are trading in. Answering it means gathering evidence, reasoning over it and proposing an action, which is what an agent with tools is good at, especially across many portfolios at once.',
     approach: [
-      'Built custom tools the model calls to pull portfolio holdings and macroeconomic indicators',
-      'Used Claude with function calling to reason over regime classification and current exposure together',
-      'Orchestrated multi-step analysis so the agent gathers evidence before recommending trades, rather than answering from a single prompt',
+      'Built custom tools the model calls to pull sector performance, portfolio holdings and each trading agent’s track record',
+      'The agent first classifies the macro regime (which sector dominates and how high the risk is) from market data and news, before it looks at any portfolio',
+      'It then rates every portfolio as healthy or on watch against that regime, and flags the trading agents that are underperforming or misaligned',
+      'Proposals come in three kinds: replace an agent with a stronger unused one, keep monitoring, or incubate a new agent the regime calls for, each with a priority and written reasoning',
+      'Kept the agent advisory by design: nothing changes in a portfolio until a person approves it',
     ],
     outcome: [
-      'A working proof of concept for LLM tool use, function calling, and agent orchestration applied to portfolio analysis',
+      'A formatted daily report covering the regime, portfolio health, flagged agents, prioritised proposals, upcoming market events and a one-paragraph verdict',
+      'A working example of LLM tool use, function calling and agent orchestration applied to portfolio oversight, with a human approval gate',
     ],
   },
   {
