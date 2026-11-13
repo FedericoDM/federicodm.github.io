@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { formatDate, getPosts } from '@/lib/blog';
+import { ogImage } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Blog — Federico Dominguez Molina',
   description:
     'Notes on LLM systems, agentic workflows, and building data pipelines that survive contact with real data.',
   openGraph: {
+    images: [ogImage],
     title: 'Blog — Federico Dominguez Molina',
     description: 'Notes on LLM systems, agentic workflows, and data engineering.',
   },
