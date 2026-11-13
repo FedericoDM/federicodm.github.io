@@ -6,6 +6,7 @@ import { EcoScoutFigure } from '@/components/viz/EcoScoutFigure';
 import { GraphReachViz } from '@/components/viz/GraphReachViz';
 import { KMeansViz } from '@/components/viz/KMeansViz';
 import { TradingAgentFigure } from '@/components/viz/TradingAgentFigure';
+import { ogImage } from '@/lib/site';
 
 type Params = { params: { slug: string } };
 
@@ -32,6 +33,7 @@ export function generateMetadata({ params }: Params): Metadata {
     title: `${project.title} — Federico Dominguez Molina`,
     description: project.description,
     openGraph: {
+      images: [ogImage],
       title: project.title,
       description: project.description,
       type: 'article',

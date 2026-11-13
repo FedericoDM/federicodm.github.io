@@ -109,7 +109,7 @@ Resume
 <span className="text-sm text-zinc-600">June 2024 - Present</span>
 </div>
 <ul className="space-y-2 text-sm text-zinc-500 list-none">
-<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Implemented multi-platform content dissemination pipelines (YouTube, WhatsApp) within a World Bank & NASA-backed randomized controlled trial</span></li>
+<li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Implemented a multi-agent system, with custom scraping tools, to extract contact information for 5,500+ government entities across nine African countries</span></li>
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Architected a global alert system to track and notify on air pollution events using NLP and graph analysis, reaching over 200,000 impressions in three months</span></li>
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Designed a social-media scraper extracting ~11 million daily posts, delivering $50,000 in monthly cost savings</span></li>
 <li className="flex gap-2"><span className="text-secondary flex-shrink-0 font-mono">→</span><span>Led LLM classification improvement from 65% → 87% accuracy via prompt engineering — built annotated datasets and iterative evaluation loops for systematic prompt adjustment</span></li>

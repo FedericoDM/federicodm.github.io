@@ -2,12 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { projects } from '@/content/projects-data';
 import { ProjectCard } from '@/components/ProjectCard';
+import { ogImage } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Projects — Federico Dominguez Molina',
   description:
     'Selected work in AI agents, LLM systems, machine learning, and data engineering — across social impact research, civic technology, and finance.',
   openGraph: {
+    images: [ogImage],
     title: 'Projects — Federico Dominguez Molina',
     description:
       'Selected work in AI agents, LLM systems, machine learning, and data engineering.',

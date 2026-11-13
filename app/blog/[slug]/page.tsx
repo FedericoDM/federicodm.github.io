@@ -5,6 +5,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import { formatDate, getAllPosts, getPost } from '@/lib/blog';
+import { ogImage } from '@/lib/site';
 
 type Params = { params: { slug: string } };
 
@@ -22,6 +23,7 @@ export function generateMetadata({ params }: Params): Metadata {
     // Drafts are built so the route exists, but should never be indexed.
     robots: post.draft ? { index: false, follow: false } : undefined,
     openGraph: {
+      images: [ogImage],
       title: post.title,
       description: post.description,
       type: 'article',
