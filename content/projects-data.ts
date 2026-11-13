@@ -67,7 +67,7 @@ export const projects: Project[] = [
     outcome: [
       '5,501 bodies and 5,331 executive seats mapped across nine countries, using 1,021 agent runs and 10,662 web searches in about 26 hours of wall-clock time',
       'The channel that works is country-specific: South Africa is 98% reachable by phone, Angola 91% by social media, Tanzania 86% by website',
-      'Low numbers are measured, not untested: 1,054 of DR Congo’s 1,061 bodies were searched and confirmed to have no discoverable web presence',
+      'In DR Congo, 1,054 of 1,061 government bodies have no discoverable web presence, each one searched and confirmed',
     ],
   },
   {
